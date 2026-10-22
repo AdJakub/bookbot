@@ -1,6 +1,8 @@
 import sys
 
+from readability import senCount
 from stats import charsDictToSortedList, countChars, countWords
+from utils import getBookText, getSentenceCount, removeHeader
 
 if len(sys.argv) != 2:
     print("Usage: python3 main.py <path_to_book>")
@@ -9,22 +11,17 @@ if len(sys.argv) != 2:
 path_to_file = sys.argv[1]
 
 
-def getBookText(path_to_file):
-    with open(path_to_file) as f:
-        file_contents = f.read()
-
-    return file_contents
-
-
 def main():
-    bookText = getBookText(path_to_file)
+    headeredText = getBookText(path_to_file)
+    bookText = removeHeader(headeredText)
     wordCount = countWords(bookText)
     charCount = countChars(bookText)
     charList = charsDictToSortedList(charCount)
-    printReport(path_to_file, wordCount, charList)
+    sentenceCount = getSentenceCount(bookText)
+    printReport(path_to_file, wordCount, charList, sentenceCount)
 
 
-def printReport(path_to_file, wordCount, charList):
+def printReport(path_to_file, wordCount, charList, sentenceCount):
     print(
         f"============ BOOKBOT ============\nAnalyzing book found at {path_to_file}...\n----------- Word Count ----------\nFound {wordCount} total words\n--------- Character Count -------"
     )
@@ -33,7 +30,13 @@ def printReport(path_to_file, wordCount, charList):
             continue
 
         print(f"{char}: {count}")
+    print(f"--------- Sentence Count ---------\nNumber of sentences: {sentenceCount}")
     print("============= END ===============")
+
+
+def dotCount():
+    bookText = getBookText(path_to_file)
+    dotList = senCount(bookText)
 
 
 main()
