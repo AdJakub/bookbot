@@ -1,6 +1,8 @@
+import json
 import re
 
-abrList = ["Mr", "Mrs"]
+dataLocation = "./data/books.json"
+abrList = ["Mr", "Mrs", "St"]
 abrSet = frozenset(abrList)
 
 
@@ -18,9 +20,19 @@ def getTitle(text):
 
 
 def getAuthor(text):
-    authorPos = text.index("Author:")
-    author = text[authorPos + len("Author:") :].strip().split("\n")[0]
+    authorPos = text.find("Author:")
+    if authorPos > 0:
+        author = text[authorPos + len("Author:") :].strip().split("\n")[0]
+    else:
+        author = "Unknown/Anonymous"
     return author
+
+
+def getGutenbergId(headeredText):
+    res = re.search(r"eBook #([0-9]+)", headeredText, flags=re.IGNORECASE)
+    if res == None:
+        return None
+    return int(res.group(1))
 
 
 def removeHeader(text):
@@ -84,6 +96,28 @@ def printLogged(bookList):
         print("\t Syllables:", book["syllable_count"])
         print("\t Flesch-Kincaid grade level:", int(book["Flesch-Kincaid"]))
         print("\t Read Count:", book["Read Count"])
+
+
+def rateBook(bookList, bookTitle, rating):
+    foundBook = None
+    for book in bookList["books"]:
+        if book["Path"] == bookTitle:
+            foundBook = book
+            break
+    if foundBook != None:
+        foundBook["Rating"] = rating
+        with open(dataLocation, "w") as d:
+            json.dump(bookList, d, indent=4)
+    else:
+        print(
+            f"{bookTitle} hasn't been logged as read yet. log it using main.py log {bookTitle} first!"
+        )
+
+
+def estimateReadingTime(wordCount):
+    readingTimeRaw = wordCount // 260
+    readingTime = readingTimeRaw // 60
+    return readingTime
 
 
 #        if match in abrSet:

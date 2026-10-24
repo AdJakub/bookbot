@@ -2,37 +2,17 @@
     "version": 1,
     "books": [
         {
+            "gutenberg_id": 1342,
             "id": 1,
             "Title": "Pride and Prejudice",
             "Author": "Jane Austen",
             "Path": "books/prideandprejudice.txt",
             "word_count": 127369,
-            "sentence_count": 5659,
+            "sentence_count": 5652,
             "syllable_count": 188691,
-            "Flesch-Kincaid": 10.668988106932666,
-            "Read Count": 1
-        },
-        {
-            "id": 2,
-            "Title": "Frankenstein; Or, The Modern Prometheus",
-            "Author": "Mary Wollstonecraft Shelley",
-            "Path": "books/frankenstein.txt",
-            "word_count": 72711,
-            "sentence_count": 3037,
-            "syllable_count": 108077,
-            "Flesch-Kincaid": 11.286688027274227,
-            "Read Count": 4
-        },
-        {
-            "id": 3,
-            "Title": "Moby Dick; Or, The Whale",
-            "Author": "Herman Melville",
-            "Path": "books/mobydick.txt",
-            "word_count": 212806,
-            "sentence_count": 8899,
-            "syllable_count": 308545,
-            "Flesch-Kincaid": 10.844940480676197,
-            "Read Count": 2
+            "Flesch-Kincaid": 10.679859483493459,
+            "Read Count": 1,
+            "Rating": null
         }
     ]
 }

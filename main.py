@@ -1,39 +1,58 @@
 import json
+import os
 import sys
+from pathlib import Path
+
+bookDir = os.fsencode("./books")
 
 from readability import senCount
 from stats import charsDictToSortedList, countChars, countWords
 from utils import (
+    estimateReadingTime,
     getAuthor,
     getBookText,
+    getGutenbergId,
     getSentenceCount,
     getSyllableTotal,
     getTitle,
     printLogged,
+    rateBook,
     removeHeader,
 )
 
-if len(sys.argv) not in (2, 3):
+if len(sys.argv) not in (2, 3, 4):
     print(
         "Usage: python3 main.py analyze/log <path_to_book> OR python3 main.py logged to view log"
     )
     sys.exit(1)
 
 mode = sys.argv[1]
-if len(sys.argv) < 2:
+if len(sys.argv) > 2:
     path_to_file = sys.argv[2]
 dataLocation = "./data/books.json"
+corpusLocation = "./data/corpus.json"
 
 with open(dataLocation, "r") as j:
     bookList = json.load(j)
 
+with open(corpusLocation, "r") as c:
+    corpus = json.load(c)
 # bookList = json.load(dataLocation)
 
 
 def main():
     if mode == "logged":
         printLogged(bookList)
+        return
+    if mode == "rate" and int(sys.argv[3]) in range(1, 11):
+        rateBook(bookList, path_to_file, sys.argv[3])
         return ()
+    if mode == "fill":
+        fillCorpus()
+        return ()
+    elif mode == "rate":
+        print("Select a rating between 1 and 10")
+        return
     headeredText = getBookText(path_to_file)
     bookText = removeHeader(headeredText)
     wordCount = countWords(bookText)
@@ -43,6 +62,8 @@ def main():
     syllableCount = getSyllableTotal(bookText)
     author = getAuthor(headeredText)
     title = getTitle(headeredText)
+    readingTime = estimateReadingTime(wordCount)
+    gutenbergId = getGutenbergId(headeredText)
     fkReadingGrade = (
         0.39 * (wordCount / sentenceCount) + 11.8 * (syllableCount / wordCount) - 15.59
     )
@@ -57,9 +78,18 @@ def main():
             fkFLoored,
             author,
             title,
+            readingTime,
         )
     elif mode == "log":
-        readBook(title, author, wordCount, sentenceCount, syllableCount, fkReadingGrade)
+        readBook(
+            title,
+            author,
+            wordCount,
+            sentenceCount,
+            syllableCount,
+            fkReadingGrade,
+            gutenbergId,
+        )
         print(f"Succesfuly logged {title} by {author}!")
         return ()
     else:
@@ -67,7 +97,9 @@ def main():
         return ()
 
 
-def readBook(title, author, wordCount, sentenceCount, syllableCount, fkReadingGrade):
+def readBook(
+    title, author, wordCount, sentenceCount, syllableCount, fkReadingGrade, gutenbergId
+):
     if bookList["books"]:
         newId = bookList["books"][-1]["id"] + 1
     else:
@@ -82,6 +114,7 @@ def readBook(title, author, wordCount, sentenceCount, syllableCount, fkReadingGr
         foundBook["Read Count"] += 1
     else:
         tempDict = {
+            "gutenberg_id": gutenbergId,
             "id": newId,
             "Title": title,
             "Author": author,
@@ -91,6 +124,7 @@ def readBook(title, author, wordCount, sentenceCount, syllableCount, fkReadingGr
             "syllable_count": syllableCount,
             "Flesch-Kincaid": fkReadingGrade,
             "Read Count": 1,
+            "Rating": None,
         }
         bookList["books"].append(tempDict)
     with open(dataLocation, "w") as d:
@@ -106,6 +140,7 @@ def printReport(
     fkFloored,
     author,
     title,
+    readingTime,
 ):
     print(
         f"============ BOOKBOT ============\nAnalyzing {title} by {author}.\n----------- Word Count ----------\nFound {wordCount} total words\n--------- Character Count -------"
@@ -117,12 +152,55 @@ def printReport(
     print(f"--------- Sentence Count ---------\nNumber of sentences: {sentenceCount}")
     print(f"--------- Syllable Count ---------\nNumber of syllables: {syllableCount}")
     print(f"--------- Flesch-Kincaid Reading Grade---------\n {fkFloored}th grade")
+    print(
+        f"--------- Estimated reading time ---------\n {readingTime} hours at 260 WPM"
+    )
     print("============= END ===============")
 
 
 def dotCount():
     bookText = getBookText(path_to_file)
     dotList = senCount(bookText)
+
+
+def basicCorpusAnalysis(path):
+    headeredText = getBookText(path)
+    bookText = removeHeader(headeredText)
+    wordCount = countWords(bookText)
+    sentenceCount = getSentenceCount(bookText)
+    syllableCount = getSyllableTotal(bookText)
+    author = getAuthor(headeredText)
+    title = getTitle(headeredText)
+    readingTime = estimateReadingTime(wordCount)
+    gutenbergId = getGutenbergId(headeredText)
+    fkReadingGrade = (
+        0.39 * (wordCount / sentenceCount) + 11.8 * (syllableCount / wordCount) - 15.59
+    )
+
+    tempDict = {
+        "gutenberg_id": gutenbergId,
+        "Title": title,
+        "Author": author,
+        "Path": str(path),
+        "word_count": wordCount,
+        "sentence_count": sentenceCount,
+        "syllable_count": syllableCount,
+        "Flesch-Kincaid": fkReadingGrade,
+        "Reading time": readingTime,
+    }
+    return tempDict
+
+
+def fillCorpus():
+    for path in Path("./books").glob("*.txt"):
+        result = basicCorpusAnalysis(path)
+        result["subjects"] = None
+        result["bookshelves"] = None
+
+        corpus["books"].append(result)
+
+    with open(corpusLocation, "w") as d:
+        json.dump(corpus, d, indent=4)
 
 
 main()
