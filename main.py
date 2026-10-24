@@ -3,6 +3,8 @@ import os
 import sys
 from pathlib import Path
 
+import requests
+
 bookDir = os.fsencode("./books")
 
 from readability import senCount
@@ -50,6 +52,9 @@ def main():
     if mode == "fill":
         fillCorpus()
         return ()
+    if mode == "enrich":
+        enrichCorpus()
+        return
     elif mode == "rate":
         print("Select a rating between 1 and 10")
         return
@@ -201,6 +206,29 @@ def fillCorpus():
 
     with open(corpusLocation, "w") as d:
         json.dump(corpus, d, indent=4)
+
+
+def enrichCorpus():
+    list = []
+    index = {}
+    for book in corpus["books"]:
+        index[book["gutenberg_id"]] = book
+    for book in corpus["books"]:
+        if book["subjects"] is None:
+            list.append(book["gutenberg_id"])
+    for start in range(0, len(list), 32):
+        chunk = list[start : start + 32]
+        response = requests.get(
+            "https://gutendex.com/books", params={"ids": ",".join(map(str, chunk))}
+        )
+        data = response.json()
+        for item in data["results"]:
+            record = index[item["id"]]
+            record["subjects"] = item["subjects"]
+            record["bookshelves"] = item["bookshelves"]
+    text = json.dumps(corpus, indent=4)
+    with open(corpusLocation, "w") as f:
+        f.write(text)
 
 
 main()

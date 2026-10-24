@@ -11,8 +11,21 @@
             "syllable_count": 33902,
             "Flesch-Kincaid": 4.681912878098146,
             "Reading time": 1,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Conflict of generations -- Drama",
+                "Juliet (Fictitious character) -- Drama",
+                "Romeo (Fictitious character) -- Drama",
+                "Tragedies (Drama)",
+                "Vendetta -- Drama",
+                "Verona (Italy) -- Drama",
+                "Youth -- Drama"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Plays/Films/Dramas",
+                "Category: Romance"
+            ]
         },
         {
             "gutenberg_id": 51252,
@@ -24,8 +37,16 @@
             "syllable_count": 242977,
             "Flesch-Kincaid": 12.825150910095168,
             "Reading time": 11,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Fairy tales -- Arab countries",
+                "Folklore -- Arab countries"
+            ],
+            "bookshelves": [
+                "Category: Adventure",
+                "Category: Classics of Literature",
+                "Category: Mythology, Legends & Folklore",
+                "Category: Romance"
+            ]
         },
         {
             "gutenberg_id": 844,
@@ -37,8 +58,17 @@
             "syllable_count": 30492,
             "Flesch-Kincaid": 6.292228385113795,
             "Reading time": 1,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Comedy plays",
+                "England -- Drama",
+                "Foundlings -- Drama",
+                "Identity (Psychology) -- Drama"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Plays/Films/Dramas",
+                "Plays"
+            ]
         },
         {
             "gutenberg_id": 205,
@@ -50,8 +80,21 @@
             "syllable_count": 163244,
             "Flesch-Kincaid": 12.473801985973022,
             "Reading time": 7,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Authors, American -- 19th century -- Biography",
+                "Civil disobedience",
+                "Government, Resistance to",
+                "Natural history -- Massachusetts -- Walden Woods",
+                "Solitude",
+                "Thoreau, Henry David, 1817-1862 -- Homes and haunts -- Massachusetts -- Walden Woods",
+                "Walden Woods (Mass.) -- Social life and customs",
+                "Wilderness areas -- Massachusetts -- Walden Woods"
+            ],
+            "bookshelves": [
+                "Category: American Literature",
+                "Category: Essays, Letters & Speeches",
+                "Category: Philosophy & Ethics"
+            ]
         },
         {
             "gutenberg_id": 25344,
@@ -63,8 +106,25 @@
             "syllable_count": 126028,
             "Flesch-Kincaid": 12.068480819811402,
             "Reading time": 5,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Adultery -- Fiction",
+                "Boston (Mass.) -- History -- Colonial period, ca. 1600-1775 -- Fiction",
+                "Clergy -- Fiction",
+                "Historical fiction",
+                "Illegitimate children -- Fiction",
+                "Married women -- Fiction",
+                "Psychological fiction",
+                "Puritans -- Fiction",
+                "Revenge -- Fiction",
+                "Triangles (Interpersonal relations) -- Fiction",
+                "Women immigrants -- Fiction"
+            ],
+            "bookshelves": [
+                "Banned Books from Anne Haight's list",
+                "Category: American Literature",
+                "Category: Classics of Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 49008,
@@ -76,8 +136,14 @@
             "syllable_count": 256123,
             "Flesch-Kincaid": 7.321105858881264,
             "Reading time": 13,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "English drama"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Plays/Films/Dramas"
+            ]
         },
         {
             "gutenberg_id": 2680,
@@ -89,8 +155,17 @@
             "syllable_count": 102885,
             "Flesch-Kincaid": 11.560623269247948,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Ethics",
+                "Life",
+                "Stoics"
+            ],
+            "bookshelves": [
+                "Category: Biographies",
+                "Category: Classics of Literature",
+                "Category: Philosophy & Ethics",
+                "Harvard Classics"
+            ]
         },
         {
             "gutenberg_id": 55,
@@ -102,8 +177,30 @@
             "syllable_count": 51596,
             "Flesch-Kincaid": 7.255003341179876,
             "Reading time": 2,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Courage -- Juvenile fiction",
+                "Cowardly Lion (Fictitious character) -- Juvenile fiction",
+                "Cyclones -- Juvenile fiction",
+                "Dreams -- Juvenile fiction",
+                "Fantasy literature",
+                "Gale, Dorothy (Fictitious character) -- Juvenile fiction",
+                "Good and evil -- Juvenile fiction",
+                "Home -- Juvenile fiction",
+                "Oz (Imaginary place) -- Juvenile fiction",
+                "Scarecrow (Fictitious character from Baum) -- Juvenile fiction",
+                "Tin Woodman (Fictitious character) -- Juvenile fiction",
+                "Toto (Fictitious character) -- Juvenile fiction",
+                "Witches -- Juvenile fiction",
+                "Wizard of Oz (Fictitious character) -- Juvenile fiction"
+            ],
+            "bookshelves": [
+                "Category: Adventure",
+                "Category: American Literature",
+                "Category: Children & Young Adult Reading",
+                "Category: Science-Fiction & Fantasy",
+                "Children's Literature",
+                "Fantasy"
+            ]
         },
         {
             "gutenberg_id": 1232,
@@ -115,8 +212,20 @@
             "syllable_count": 74935,
             "Flesch-Kincaid": 18.027732018816497,
             "Reading time": 3,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Political ethics -- Early works to 1800",
+                "Political science -- Philosophy -- Early works to 1800",
+                "State, The -- Early works to 1800"
+            ],
+            "bookshelves": [
+                "Banned Books from Anne Haight's list",
+                "Category: History - Early Modern (c. 1450-1750)",
+                "Category: Philosophy & Ethics",
+                "Category: Politics",
+                "Harvard Classics",
+                "Philosophy",
+                "Politics"
+            ]
         },
         {
             "gutenberg_id": 16389,
@@ -128,8 +237,18 @@
             "syllable_count": 111563,
             "Flesch-Kincaid": 8.305377217879755,
             "Reading time": 5,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "British -- Italy -- Fiction",
+                "Domestic fiction",
+                "Female friendship -- Fiction",
+                "Italy -- Fiction",
+                "Love stories"
+            ],
+            "bookshelves": [
+                "Bestsellers, American, 1895-1923",
+                "Category: British Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 2641,
@@ -141,8 +260,19 @@
             "syllable_count": 94418,
             "Flesch-Kincaid": 5.842164126583739,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "British -- Italy -- Fiction",
+                "England -- Fiction",
+                "Florence (Italy) -- Fiction",
+                "Humorous stories",
+                "Young women -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Novels",
+                "Category: Romance",
+                "Italy"
+            ]
         },
         {
             "gutenberg_id": 1260,
@@ -154,8 +284,25 @@
             "syllable_count": 260843,
             "Flesch-Kincaid": 8.900112022517906,
             "Reading time": 11,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Bildungsromans",
+                "Charity-schools -- Fiction",
+                "Country homes -- Fiction",
+                "England -- Fiction",
+                "Fathers and daughters -- Fiction",
+                "Governesses -- Fiction",
+                "Love stories",
+                "Married people -- Fiction",
+                "Mentally ill women -- Fiction",
+                "Orphans -- Fiction",
+                "Young women -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Category: Romance"
+            ]
         },
         {
             "gutenberg_id": 161,
@@ -167,8 +314,25 @@
             "syllable_count": 175514,
             "Flesch-Kincaid": 11.638209207986034,
             "Reading time": 7,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Domestic fiction",
+                "England -- Fiction",
+                "England -- Social life and customs -- 19th century -- Fiction",
+                "Gentry -- England -- Fiction",
+                "Inheritance and succession -- Fiction",
+                "Love stories",
+                "Mate selection -- Fiction",
+                "Regency fiction",
+                "Sisters -- Fiction",
+                "Social classes -- Fiction",
+                "Young women -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Category: Romance"
+            ]
         },
         {
             "gutenberg_id": 145,
@@ -180,8 +344,23 @@
             "syllable_count": 460297,
             "Flesch-Kincaid": 10.339543801373953,
             "Reading time": 20,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Bildungsromans",
+                "City and town life -- Fiction",
+                "Didactic fiction",
+                "Domestic fiction",
+                "England -- Fiction",
+                "Love stories",
+                "Married people -- Fiction",
+                "Young women -- Fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Historical Fiction"
+            ]
         },
         {
             "gutenberg_id": 1080,
@@ -193,8 +372,16 @@
             "syllable_count": 5095,
             "Flesch-Kincaid": 22.517988338192414,
             "Reading time": 0,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Ireland -- Politics and government -- 18th century -- Humor",
+                "Political satire, English",
+                "Religious satire, English"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Essays, Letters & Speeches"
+            ]
         },
         {
             "gutenberg_id": 3296,
@@ -206,8 +393,21 @@
             "syllable_count": 152607,
             "Flesch-Kincaid": 13.27259525740434,
             "Reading time": 7,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Augustine, of Hippo, Saint, 354-430",
+                "Bishops -- Algeria -- Hippo (Extinct city) -- Biography",
+                "Catholic Church -- Bishops -- Biography",
+                "Christian saints -- Algeria -- Hippo (Extinct city) -- Biography"
+            ],
+            "bookshelves": [
+                "Category: Biographies",
+                "Category: Classics of Literature",
+                "Category: Philosophy & Ethics",
+                "Category: Religion/Spirituality",
+                "Christianity",
+                "Classical Antiquity",
+                "Harvard Classics"
+            ]
         },
         {
             "gutenberg_id": 1952,
@@ -219,8 +419,18 @@
             "syllable_count": 8029,
             "Flesch-Kincaid": 6.08066691051479,
             "Reading time": 0,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Feminist fiction",
+                "Married women -- Psychology -- Fiction",
+                "Mentally ill women -- Fiction",
+                "Psychological fiction",
+                "Sex role -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: American Literature",
+                "Category: Short Stories",
+                "Gothic Fiction"
+            ]
         },
         {
             "gutenberg_id": 8492,
@@ -232,8 +442,18 @@
             "syllable_count": 100277,
             "Flesch-Kincaid": 7.531464429996213,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Horror tales, American",
+                "Short stories, American",
+                "United States -- Social life and customs -- 19th century -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: American Literature",
+                "Category: Crime, Thrillers and Mystery",
+                "Category: Science-Fiction & Fantasy",
+                "Category: Short Stories",
+                "Horror"
+            ]
         },
         {
             "gutenberg_id": 59828,
@@ -245,8 +465,29 @@
             "syllable_count": 587887,
             "Flesch-Kincaid": 7.617576843949465,
             "Reading time": 27,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Bakers -- Fiction",
+                "Barbers -- Fiction",
+                "Cannibalism -- Fiction",
+                "Fleet Street (London, England) -- Fiction",
+                "Historical fiction",
+                "Horror tales",
+                "London (England) -- Social life and customs -- 18th century -- Fiction",
+                "Missing persons -- Fiction",
+                "Murder -- Fiction",
+                "Mystery fiction",
+                "Penny dreadfuls",
+                "Revenge -- Fiction",
+                "Suspense fiction",
+                "Todd, Sweeney (Legendary character) -- Fiction",
+                "Young women -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Crime, Thrillers and Mystery",
+                "Category: Novels",
+                "Category: Romance"
+            ]
         },
         {
             "gutenberg_id": 345,
@@ -258,8 +499,26 @@
             "syllable_count": 211259,
             "Flesch-Kincaid": 7.615337615287917,
             "Reading time": 10,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Dracula, Count (Fictitious character) -- Fiction",
+                "Epistolary fiction",
+                "Gothic fiction",
+                "Horror tales",
+                "Transylvania (Romania) -- Fiction",
+                "Vampires -- Fiction",
+                "Whitby (England) -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Crime, Thrillers and Mystery",
+                "Category: Novels",
+                "Category: Science-Fiction & Fantasy",
+                "Gothic Fiction",
+                "Horror",
+                "Movie Books",
+                "Mystery Fiction"
+            ]
         },
         {
             "gutenberg_id": 23,
@@ -271,8 +530,18 @@
             "syllable_count": 58499,
             "Flesch-Kincaid": 9.895041337596346,
             "Reading time": 2,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Abolitionists -- United States -- Biography",
+                "African American abolitionists -- Biography",
+                "Douglass, Frederick, 1818-1895",
+                "Enslaved persons -- United States -- Biography"
+            ],
+            "bookshelves": [
+                "African American Writers",
+                "Category: Biographies",
+                "Category: History - American",
+                "Slavery"
+            ]
         },
         {
             "gutenberg_id": 2160,
@@ -284,8 +553,21 @@
             "syllable_count": 223326,
             "Flesch-Kincaid": 23.281903656788717,
             "Reading time": 9,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Epistolary fiction",
+                "Great Britain -- Fiction",
+                "Travelers -- Fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Essays, Letters & Speeches",
+                "Category: Humour",
+                "Category: Novels",
+                "Category: Travel Writing",
+                "Historical Fiction"
+            ]
         },
         {
             "gutenberg_id": 2591,
@@ -297,8 +579,15 @@
             "syllable_count": 125915,
             "Flesch-Kincaid": 8.590193861286952,
             "Reading time": 6,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Fairy tales -- Germany"
+            ],
+            "bookshelves": [
+                "Category: Children & Young Adult Reading",
+                "Category: German Literature",
+                "Category: Mythology, Legends & Folklore",
+                "Category: Short Stories"
+            ]
         },
         {
             "gutenberg_id": 100,
@@ -310,8 +599,16 @@
             "syllable_count": 1289944,
             "Flesch-Kincaid": 5.773821315429924,
             "Reading time": 61,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "English drama -- Early modern and Elizabethan, 1500-1600"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Plays/Films/Dramas",
+                "Category: Poetry",
+                "Plays"
+            ]
         },
         {
             "gutenberg_id": 76,
@@ -323,8 +620,28 @@
             "syllable_count": 139141,
             "Flesch-Kincaid": 6.991312477686595,
             "Reading time": 7,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Adventure stories",
+                "Bildungsromans",
+                "Boys -- Fiction",
+                "Finn, Huckleberry (Fictitious character) -- Fiction",
+                "Fugitive slaves -- Fiction",
+                "Humorous stories",
+                "Male friendship -- Fiction",
+                "Mississippi River -- Fiction",
+                "Missouri -- Fiction",
+                "Race relations -- Fiction",
+                "Runaway children -- Fiction"
+            ],
+            "bookshelves": [
+                "Banned Books List from the American Library Association",
+                "Banned Books from Anne Haight's list",
+                "Best Books Ever Listings",
+                "Category: Adventure",
+                "Category: American Literature",
+                "Category: Classics of Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 1400,
@@ -336,8 +653,22 @@
             "syllable_count": 252597,
             "Flesch-Kincaid": 8.424621067309307,
             "Reading time": 11,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Benefactors -- Fiction",
+                "Bildungsromans",
+                "England -- Fiction",
+                "Ex-convicts -- Fiction",
+                "Man-woman relationships -- Fiction",
+                "Orphans -- Fiction",
+                "Revenge -- Fiction",
+                "Young men -- Fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 2554,
@@ -349,8 +680,22 @@
             "syllable_count": 290849,
             "Flesch-Kincaid": 7.183211574355042,
             "Reading time": 13,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Crime -- Psychological aspects -- Fiction",
+                "Detective and mystery stories",
+                "Murder -- Fiction",
+                "Psychological fiction",
+                "Saint Petersburg (Russia) -- Fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: Classics of Literature",
+                "Category: Crime, Thrillers and Mystery",
+                "Category: Novels",
+                "Category: Russian Literature",
+                "Crime Fiction",
+                "Harvard Classics"
+            ]
         },
         {
             "gutenberg_id": 2600,
@@ -362,8 +707,24 @@
             "syllable_count": 819958,
             "Flesch-Kincaid": 9.270048237869997,
             "Reading time": 36,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Aristocracy (Social class) -- Russia -- Fiction",
+                "Historical fiction",
+                "Napoleonic Wars, 1800-1815 -- Campaigns -- Russia -- Fiction",
+                "Russia -- History -- Alexander I, 1801-1825 -- Fiction",
+                "War stories"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: Classics of Literature",
+                "Category: Historical Novels",
+                "Category: Novels",
+                "Category: Russian Literature",
+                "Historical Fiction",
+                "Movie Books",
+                "Napoleonic(Bookshelf)",
+                "Opera"
+            ]
         },
         {
             "gutenberg_id": 37683,
@@ -375,8 +736,13 @@
             "syllable_count": 556799,
             "Flesch-Kincaid": 56.11906968167645,
             "Reading time": 20,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "English language -- Dictionaries"
+            ],
+            "bookshelves": [
+                "Category: Encyclopedias/Dictionaries/Reference",
+                "Category: Language & Communication"
+            ]
         },
         {
             "gutenberg_id": 394,
@@ -388,8 +754,18 @@
             "syllable_count": 99456,
             "Flesch-Kincaid": 12.096162477425537,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "England -- Fiction",
+                "Female friendship -- Fiction",
+                "Older women -- Fiction",
+                "Pastoral fiction",
+                "Sisters -- Fiction",
+                "Villages -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 1661,
@@ -401,8 +777,19 @@
             "syllable_count": 142959,
             "Flesch-Kincaid": 6.97322056466469,
             "Reading time": 6,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Detective and mystery stories, English",
+                "Holmes, Sherlock (Fictitious character) -- Fiction",
+                "Private investigators -- England -- Fiction"
+            ],
+            "bookshelves": [
+                "Banned Books from Anne Haight's list",
+                "Category: British Literature",
+                "Category: Crime, Thrillers and Mystery",
+                "Category: Short Stories",
+                "Contemporary Reviews",
+                "Detective Fiction"
+            ]
         },
         {
             "gutenberg_id": 1727,
@@ -414,8 +801,18 @@
             "syllable_count": 170039,
             "Flesch-Kincaid": 12.537868195096006,
             "Reading time": 8,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Epic poetry, Greek -- Translations into English",
+                "Homer -- Translations into English",
+                "Odysseus, King of Ithaca (Mythological character)"
+            ],
+            "bookshelves": [
+                "Category: Classics of Literature",
+                "Category: Mythology, Legends & Folklore",
+                "Category: Poetry",
+                "Classical Antiquity",
+                "Harvard Classics"
+            ]
         },
         {
             "gutenberg_id": 11,
@@ -427,8 +824,19 @@
             "syllable_count": 34980,
             "Flesch-Kincaid": 8.12014072501356,
             "Reading time": 1,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Alice (Fictitious character from Carroll) -- Juvenile fiction",
+                "Children's stories",
+                "Fantasy fiction",
+                "Imaginary places -- Juvenile fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Children & Young Adult Reading",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Children's Literature"
+            ]
         },
         {
             "gutenberg_id": 120,
@@ -440,8 +848,22 @@
             "syllable_count": 89158,
             "Flesch-Kincaid": 7.1787912517878,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Pirates -- Fiction",
+                "Sea stories",
+                "Treasure Island (Imaginary place) -- Fiction",
+                "Treasure troves -- Fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: Adventure",
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Children's Literature",
+                "Historical Fiction",
+                "Pirates, Buccaneers, Corsairs, etc."
+            ]
         },
         {
             "gutenberg_id": 1184,
@@ -453,8 +875,23 @@
             "syllable_count": 667585,
             "Flesch-Kincaid": 9.157645215008586,
             "Reading time": 29,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Adventure stories",
+                "Dant\u00e8s, Edmond (Fictitious character) -- Fiction",
+                "France -- History -- 19th century -- Fiction",
+                "Historical fiction",
+                "Pirates -- Fiction",
+                "Prisoners -- Fiction",
+                "Revenge -- Fiction"
+            ],
+            "bookshelves": [
+                "Adventure",
+                "Category: Adventure",
+                "Category: Classics of Literature",
+                "Category: French Literature",
+                "Category: Novels",
+                "Movie Books"
+            ]
         },
         {
             "gutenberg_id": 4085,
@@ -466,8 +903,22 @@
             "syllable_count": 284702,
             "Flesch-Kincaid": 18.73634399267586,
             "Reading time": 12,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "England -- Fiction",
+                "Impressment -- Fiction",
+                "Picaresque literature",
+                "Rogues and vagabonds -- Fiction",
+                "Sailors -- Fiction",
+                "Scots -- England -- Fiction",
+                "Sea stories",
+                "Warships -- Fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: British Literature",
+                "Category: Novels",
+                "Historical Fiction"
+            ]
         },
         {
             "gutenberg_id": 2542,
@@ -479,8 +930,17 @@
             "syllable_count": 35082,
             "Flesch-Kincaid": 4.78206177772633,
             "Reading time": 1,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Man-woman relationships -- Drama",
+                "Marriage -- Drama",
+                "Norwegian drama -- Translations into English",
+                "Wives -- Drama"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: Classics of Literature",
+                "Category: Plays/Films/Dramas"
+            ]
         },
         {
             "gutenberg_id": 1259,
@@ -492,8 +952,18 @@
             "syllable_count": 342345,
             "Flesch-Kincaid": 7.391977075413006,
             "Reading time": 15,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "France -- History -- Louis XIV, 1643-1715 -- Fiction"
+            ],
+            "bookshelves": [
+                "Adventure",
+                "Category: Adventure",
+                "Category: French Literature",
+                "Category: Historical Novels",
+                "Category: Novels",
+                "Historical Fiction",
+                "Movie Books"
+            ]
         },
         {
             "gutenberg_id": 16328,
@@ -505,8 +975,18 @@
             "syllable_count": 57762,
             "Flesch-Kincaid": 19.471401391402157,
             "Reading time": 2,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Dragons -- Poetry",
+                "Epic poetry, English (Old)",
+                "Monsters -- Poetry"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Mythology, Legends & Folklore",
+                "Category: Poetry",
+                "Poetry"
+            ]
         },
         {
             "gutenberg_id": 3207,
@@ -518,8 +998,16 @@
             "syllable_count": 315170,
             "Flesch-Kincaid": 19.061363074866964,
             "Reading time": 13,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Political science -- Early works to 1800",
+                "State, The -- Early works to 1800"
+            ],
+            "bookshelves": [
+                "Category: History - Early Modern (c. 1450-1750)",
+                "Category: Philosophy & Ethics",
+                "Harvard Classics",
+                "Politics"
+            ]
         },
         {
             "gutenberg_id": 98,
@@ -531,8 +1019,23 @@
             "syllable_count": 190967,
             "Flesch-Kincaid": 8.26788387140244,
             "Reading time": 8,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "British -- France -- Paris -- Fiction",
+                "Executions and executioners -- Fiction",
+                "France -- History -- Revolution, 1789-1799 -- Fiction",
+                "French -- England -- London -- Fiction",
+                "Historical fiction",
+                "London (England) -- History -- 18th century -- Fiction",
+                "Lookalikes -- Fiction",
+                "Paris (France) -- History -- 1789-1799 -- Fiction",
+                "War stories"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Historical Novels",
+                "Historical Fiction"
+            ]
         },
         {
             "gutenberg_id": 41,
@@ -544,8 +1047,17 @@
             "syllable_count": 17996,
             "Flesch-Kincaid": 15.802892591487765,
             "Reading time": 0,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Ghosts -- Fiction",
+                "New York (State) -- History -- 1775-1865 -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: American Literature",
+                "Category: Mythology, Legends & Folklore",
+                "Category: Short Stories",
+                "Children's Literature",
+                "Harvard Classics"
+            ]
         },
         {
             "gutenberg_id": 6761,
@@ -557,8 +1069,15 @@
             "syllable_count": 256445,
             "Flesch-Kincaid": 21.014348927221068,
             "Reading time": 10,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Adventure stories",
+                "Gothic fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: British Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 174,
@@ -570,8 +1089,23 @@
             "syllable_count": 109121,
             "Flesch-Kincaid": 5.63604146676456,
             "Reading time": 5,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Appearance (Philosophy) -- Fiction",
+                "Conduct of life -- Fiction",
+                "Didactic fiction",
+                "Great Britain -- History -- Victoria, 1837-1901 -- Fiction",
+                "London (England) -- History -- 1800-1950 -- Fiction",
+                "Paranormal fiction",
+                "Portraits -- Fiction",
+                "Supernatural -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Gothic Fiction",
+                "Movie Books"
+            ]
         },
         {
             "gutenberg_id": 4300,
@@ -583,8 +1117,27 @@
             "syllable_count": 382648,
             "Flesch-Kincaid": 6.820971436277613,
             "Reading time": 16,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Alienation (Social psychology) -- Fiction",
+                "Artists -- Fiction",
+                "City and town life -- Fiction",
+                "Domestic fiction",
+                "Dublin (Ireland) -- Fiction",
+                "Epic literature",
+                "Jewish men -- Fiction",
+                "Male friendship -- Fiction",
+                "Married people -- Fiction",
+                "Psychological fiction"
+            ],
+            "bookshelves": [
+                "Banned Books List from the American Library Association",
+                "Banned Books from Anne Haight's list",
+                "Best Books Ever Listings",
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Erotic Fiction"
+            ]
         },
         {
             "gutenberg_id": 2852,
@@ -596,8 +1149,22 @@
             "syllable_count": 81194,
             "Flesch-Kincaid": 6.498441898036518,
             "Reading time": 3,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Blessing and cursing -- Fiction",
+                "Dartmoor (England) -- Fiction",
+                "Detective and mystery stories",
+                "Dogs -- Fiction",
+                "Holmes, Sherlock (Fictitious character) -- Fiction",
+                "Private investigators -- England -- Fiction"
+            ],
+            "bookshelves": [
+                "Bestsellers, American, 1895-1923",
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Crime, Thrillers and Mystery",
+                "Category: Novels",
+                "Detective Fiction"
+            ]
         },
         {
             "gutenberg_id": 43,
@@ -609,8 +1176,24 @@
             "syllable_count": 35552,
             "Flesch-Kincaid": 9.556612841044593,
             "Reading time": 1,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Horror tales",
+                "London (England) -- Fiction",
+                "Multiple personality -- Fiction",
+                "Physicians -- Fiction",
+                "Psychological fiction",
+                "Science fiction",
+                "Self-experimentation in medicine -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Crime, Thrillers and Mystery",
+                "Category: Novels",
+                "Horror",
+                "Movie Books",
+                "Precursors of Science Fiction"
+            ]
         },
         {
             "gutenberg_id": 1342,
@@ -622,8 +1205,23 @@
             "syllable_count": 188691,
             "Flesch-Kincaid": 10.679859483493459,
             "Reading time": 8,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Courtship -- Fiction",
+                "Domestic fiction",
+                "England -- Fiction",
+                "Love stories",
+                "Sisters -- Fiction",
+                "Social classes -- Fiction",
+                "Young women -- Fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Category: Romance",
+                "Harvard Classics"
+            ]
         },
         {
             "gutenberg_id": 65238,
@@ -635,8 +1233,18 @@
             "syllable_count": 107331,
             "Flesch-Kincaid": 5.3992712738241195,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Battle, Superintendent (Fictitious character) -- Fiction",
+                "Detective and mystery stories",
+                "Police -- England -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: Adventure",
+                "Category: British Literature",
+                "Category: Crime, Thrillers and Mystery",
+                "Category: Novels",
+                "Category: Romance"
+            ]
         },
         {
             "gutenberg_id": 37106,
@@ -648,8 +1256,23 @@
             "syllable_count": 262186,
             "Flesch-Kincaid": 10.125283575032068,
             "Reading time": 12,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Autobiographical fiction",
+                "Bildungsromans",
+                "Domestic fiction",
+                "Family life -- New England -- Fiction",
+                "March family (Fictitious characters) -- Fiction",
+                "Mothers and daughters -- Fiction",
+                "New England -- Fiction",
+                "Sisters -- Fiction",
+                "Young women -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: American Literature",
+                "Category: Children & Young Adult Reading",
+                "Category: Classics of Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 64317,
@@ -661,8 +1284,18 @@
             "syllable_count": 68331,
             "Flesch-Kincaid": 6.961297782799175,
             "Reading time": 3,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "First loves -- Fiction",
+                "Long Island (N.Y.) -- Fiction",
+                "Married women -- Fiction",
+                "Psychological fiction",
+                "Rich people -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: American Literature",
+                "Category: Classics of Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 5200,
@@ -674,8 +1307,16 @@
             "syllable_count": 30173,
             "Flesch-Kincaid": 11.910798704296564,
             "Reading time": 1,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Metamorphosis -- Fiction",
+                "Psychological fiction"
+            ],
+            "bookshelves": [
+                "Category: Classics of Literature",
+                "Category: German Literature",
+                "Category: Novels",
+                "Horror"
+            ]
         },
         {
             "gutenberg_id": 74,
@@ -687,8 +1328,26 @@
             "syllable_count": 97110,
             "Flesch-Kincaid": 6.491851410999409,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Adventure stories",
+                "Bildungsromans",
+                "Boys -- Fiction",
+                "Child witnesses -- Fiction",
+                "Humorous stories",
+                "Male friendship -- Fiction",
+                "Mississippi River Valley -- Fiction",
+                "Missouri -- Fiction",
+                "Runaway children -- Fiction",
+                "Sawyer, Tom (Fictitious character) -- Fiction"
+            ],
+            "bookshelves": [
+                "Banned Books List from the American Library Association",
+                "Banned Books from Anne Haight's list",
+                "Category: Adventure",
+                "Category: American Literature",
+                "Category: Classics of Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 67979,
@@ -700,8 +1359,19 @@
             "syllable_count": 98774,
             "Flesch-Kincaid": 6.052700465366467,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Canada -- History -- 1914-1945 -- Fiction",
+                "Choice (Psychology) -- Fiction",
+                "Love -- Fiction",
+                "Romance fiction",
+                "Self-actualization (Psychology) -- Fiction",
+                "Single women -- Fiction",
+                "Young adult fiction"
+            ],
+            "bookshelves": [
+                "Category: Novels",
+                "Category: Romance"
+            ]
         },
         {
             "gutenberg_id": 2701,
@@ -713,8 +1383,24 @@
             "syllable_count": 308545,
             "Flesch-Kincaid": 10.86805387506369,
             "Reading time": 13,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Adventure stories",
+                "Ahab, Captain (Fictitious character) -- Fiction",
+                "Mentally ill -- Fiction",
+                "Psychological fiction",
+                "Sea stories",
+                "Ship captains -- Fiction",
+                "Whales -- Fiction",
+                "Whaling -- Fiction",
+                "Whaling ships -- Fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: Adventure",
+                "Category: American Literature",
+                "Category: Classics of Literature",
+                "Category: Novels"
+            ]
         },
         {
             "gutenberg_id": 49297,
@@ -726,8 +1412,15 @@
             "syllable_count": 280993,
             "Flesch-Kincaid": 8.7611975384625,
             "Reading time": 14,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "English drama"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Historical Novels",
+                "Category: Plays/Films/Dramas"
+            ]
         },
         {
             "gutenberg_id": 5197,
@@ -739,8 +1432,14 @@
             "syllable_count": 339497,
             "Flesch-Kincaid": 15.485431363684878,
             "Reading time": 14,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Composers -- Germany -- Biography",
+                "Wagner, Richard, 1813-1883"
+            ],
+            "bookshelves": [
+                "Category: Biographies",
+                "Category: Music"
+            ]
         },
         {
             "gutenberg_id": 244,
@@ -752,8 +1451,18 @@
             "syllable_count": 61333,
             "Flesch-Kincaid": 7.6578374457951774,
             "Reading time": 2,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Detective and mystery stories",
+                "England -- Fiction",
+                "Holmes, Sherlock (Fictitious character) -- Fiction",
+                "Private investigators -- England -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Crime, Thrillers and Mystery",
+                "Category: Novels",
+                "Detective Fiction"
+            ]
         },
         {
             "gutenberg_id": 41445,
@@ -765,8 +1474,23 @@
             "syllable_count": 108077,
             "Flesch-Kincaid": 11.305171571317576,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Frankenstein's monster (Fictitious character) -- Fiction",
+                "Frankenstein, Victor (Fictitious character) -- Fiction",
+                "Gothic fiction",
+                "Horror tales",
+                "Monsters -- Fiction",
+                "Science fiction",
+                "Scientists -- Fiction"
+            ],
+            "bookshelves": [
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Category: Science-Fiction & Fantasy",
+                "Precursors of Science Fiction",
+                "Science Fiction by Women"
+            ]
         },
         {
             "gutenberg_id": 78118,
@@ -778,8 +1502,11 @@
             "syllable_count": 89752,
             "Flesch-Kincaid": 6.005246643832187,
             "Reading time": 4,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Football players -- Juvenile fiction",
+                "Football stories"
+            ],
+            "bookshelves": []
         },
         {
             "gutenberg_id": 768,
@@ -791,8 +1518,26 @@
             "syllable_count": 163829,
             "Flesch-Kincaid": 8.513702291599525,
             "Reading time": 7,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Domestic fiction",
+                "Foundlings -- Fiction",
+                "Heathcliff (Fictitious character : Bront\u00eb) -- Fiction",
+                "Love stories",
+                "Psychological fiction",
+                "Rejection (Psychology) -- Fiction",
+                "Revenge -- Fiction",
+                "Rural families -- Fiction",
+                "Triangles (Interpersonal relations) -- Fiction",
+                "Yorkshire (England) -- Fiction"
+            ],
+            "bookshelves": [
+                "Best Books Ever Listings",
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Gothic Fiction",
+                "Movie Books"
+            ]
         },
         {
             "gutenberg_id": 78033,
@@ -804,8 +1549,10 @@
             "syllable_count": 13771,
             "Flesch-Kincaid": 10.853058391957024,
             "Reading time": 0,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "World War, 1914-1918 -- Personal narratives"
+            ],
+            "bookshelves": []
         },
         {
             "gutenberg_id": 6593,
@@ -817,8 +1564,23 @@
             "syllable_count": 510561,
             "Flesch-Kincaid": 14.674567920399713,
             "Reading time": 22,
-            "subjects": null,
-            "bookshelves": null
+            "subjects": [
+                "Bildungsromans",
+                "England -- Fiction",
+                "Foundlings -- Fiction",
+                "Humorous stories",
+                "Identity (Psychology) -- Fiction",
+                "Young men -- Fiction"
+            ],
+            "bookshelves": [
+                "Banned Books from Anne Haight's list",
+                "Best Books Ever Listings",
+                "Category: British Literature",
+                "Category: Classics of Literature",
+                "Category: Novels",
+                "Harvard Classics",
+                "Movie Books"
+            ]
         }
     ]
 }
