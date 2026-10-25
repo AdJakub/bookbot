@@ -52,10 +52,14 @@ def buildProfile(library, corpus):
         if book["Rating"] != None:
             if int(book["Rating"]) >= MIN_RATING:
                 gid = book["gutenberg_id"]
+                if gid not in corpusById:
+                    continue
                 likedShelves.update(corpusById[gid]["bookshelves"])
                 readFk.append(corpusById[gid]["Flesch-Kincaid"])
                 readRt.append(minutes(corpusById[gid]))
                 likedSubjects.update(corpusById[gid]["subjects"])
+    if not readFk:
+        return None
 
     fkAverages = statistics.mean(readFk)
     rtAverages = statistics.median(readRt)
@@ -109,6 +113,9 @@ def scoreBook(book, profile):
 
 def recommend(library, corpus, topN=10):
     profile = buildProfile(library, corpus)
+
+    if profile is None:
+        return []
 
     results = []
     for corpusBook in corpus["books"]:

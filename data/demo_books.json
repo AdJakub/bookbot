@@ -1,0 +1,77 @@
+{
+    "version": 1,
+    "books": [
+        {
+            "gutenberg_id": 2600,
+            "id": 1,
+            "Title": "War and Peace",
+            "Author": "graf Leo Tolstoy",
+            "word_count": 563296,
+            "sentence_count": 28592,
+            "syllable_count": 819958,
+            "Flesch-Kincaid": 9.270048237869997,
+            "Read Count": 1,
+            "Rating": 8
+        },
+        {
+            "gutenberg_id": 2554,
+            "id": 2,
+            "Title": "Crime and Punishment",
+            "Author": "Fyodor Dostoyevsky",
+            "word_count": 203622,
+            "sentence_count": 13418,
+            "syllable_count": 290849,
+            "Flesch-Kincaid": 7.183211574355042,
+            "Read Count": 1,
+            "Rating": 10
+        },
+        {
+            "gutenberg_id": 345,
+            "id": 3,
+            "Title": "Dracula",
+            "Author": "Bram Stoker",
+            "word_count": 161329,
+            "sentence_count": 8115,
+            "syllable_count": 211259,
+            "Flesch-Kincaid": 7.615337615287917,
+            "Read Count": 1,
+            "Rating": 7
+        },
+        {
+            "gutenberg_id": 768,
+            "id": 4,
+            "Title": "Wuthering Heights",
+            "Author": "Emily Bront\u00eb",
+            "word_count": 115954,
+            "sentence_count": 6085,
+            "syllable_count": 163829,
+            "Flesch-Kincaid": 8.513702291599525,
+            "Read Count": 1,
+            "Rating": 8
+        },
+        {
+            "gutenberg_id": 5200,
+            "id": 5,
+            "Title": "Metamorphosis",
+            "Author": "Franz Kafka",
+            "word_count": 21943,
+            "sentence_count": 759,
+            "syllable_count": 30173,
+            "Flesch-Kincaid": 11.910798704296564,
+            "Read Count": 1,
+            "Rating": 8
+        },
+        {
+            "gutenberg_id": 65238,
+            "id": 6,
+            "Title": "The Secret of Chimneys",
+            "Author": "Agatha Christie",
+            "word_count": 74628,
+            "sentence_count": 7243,
+            "syllable_count": 107331,
+            "Flesch-Kincaid": 5.3992712738241195,
+            "Read Count": 1,
+            "Rating": 3
+        }
+    ]
+}
