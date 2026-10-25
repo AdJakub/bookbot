@@ -24,7 +24,7 @@
             "sentence_count": 759,
             "syllable_count": 30173,
             "Flesch-Kincaid": 11.910798704296564,
-            "Read Count": 1,
+            "Read Count": 3,
             "Rating": "10"
         },
         {
@@ -52,6 +52,19 @@
             "Flesch-Kincaid": 9.270048237869997,
             "Read Count": 1,
             "Rating": "10"
+        },
+        {
+            "gutenberg_id": 768,
+            "id": 5,
+            "Title": "Wuthering Heights",
+            "Author": "Emily Bront\u00eb",
+            "Path": "books/wutheringheights.txt",
+            "word_count": 115954,
+            "sentence_count": 6085,
+            "syllable_count": 163829,
+            "Flesch-Kincaid": 8.513702291599525,
+            "Read Count": 1,
+            "Rating": null
         }
     ]
 }

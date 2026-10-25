@@ -8,16 +8,11 @@ from reccomender import recommend
 
 bookDir = os.fsencode("./books")
 
+from library import addBook, analyzeText
 from readability import senCount
-from stats import charsDictToSortedList, countChars, countWords
+from stats import charsDictToSortedList, countChars
 from utils import (
-    estimateReadingTime,
-    getAuthor,
     getBookText,
-    getGutenbergId,
-    getSentenceCount,
-    getSyllableTotal,
-    getTitle,
     printLogged,
     rateBook,
     removeHeader,
@@ -66,18 +61,17 @@ def main():
         return
     headeredText = getBookText(path_to_file)
     bookText = removeHeader(headeredText)
-    wordCount = countWords(bookText)
     charCount = countChars(bookText)
     charList = charsDictToSortedList(charCount)
-    sentenceCount = getSentenceCount(bookText)
-    syllableCount = getSyllableTotal(bookText)
-    author = getAuthor(headeredText)
-    title = getTitle(headeredText)
-    readingTime = estimateReadingTime(wordCount)
-    gutenbergId = getGutenbergId(headeredText)
-    fkReadingGrade = (
-        0.39 * (wordCount / sentenceCount) + 11.8 * (syllableCount / wordCount) - 15.59
-    )
+    result = analyzeText(headeredText)
+    wordCount = result["word_count"]
+    sentenceCount = result["sentence_count"]
+    syllableCount = result["syllable_count"]
+    author = result["Author"]
+    title = result["Title"]
+    readingTime = result["Reading time"]
+    gutenbergId = result["gutenberg_id"]
+    fkReadingGrade = result["Flesch-Kincaid"]
     fkFLoored = int(fkReadingGrade)
     if mode == "analyze":
         printReport(
@@ -92,15 +86,7 @@ def main():
             readingTime,
         )
     elif mode == "log":
-        readBook(
-            title,
-            author,
-            wordCount,
-            sentenceCount,
-            syllableCount,
-            fkReadingGrade,
-            gutenbergId,
-        )
+        readBook(result)
         print(f"Succesfuly logged {title} by {author}!")
         return ()
     else:
@@ -108,36 +94,8 @@ def main():
         return ()
 
 
-def readBook(
-    title, author, wordCount, sentenceCount, syllableCount, fkReadingGrade, gutenbergId
-):
-    if bookList["books"]:
-        newId = bookList["books"][-1]["id"] + 1
-    else:
-        newId = 1
-    foundBook = None
-    for book in bookList["books"]:
-        if book["Title"] == title:
-            foundBook = book
-            break
-    if foundBook != None:
-        # if book["Read Count"] > 0:
-        foundBook["Read Count"] += 1
-    else:
-        tempDict = {
-            "gutenberg_id": gutenbergId,
-            "id": newId,
-            "Title": title,
-            "Author": author,
-            "Path": path_to_file,
-            "word_count": wordCount,
-            "sentence_count": sentenceCount,
-            "syllable_count": syllableCount,
-            "Flesch-Kincaid": fkReadingGrade,
-            "Read Count": 1,
-            "Rating": None,
-        }
-        bookList["books"].append(tempDict)
+def readBook(result):
+    addBook(bookList, result, path_to_file)
     with open(dataLocation, "w") as d:
         json.dump(bookList, d, indent=4)
 
@@ -176,30 +134,9 @@ def dotCount():
 
 def basicCorpusAnalysis(path):
     headeredText = getBookText(path)
-    bookText = removeHeader(headeredText)
-    wordCount = countWords(bookText)
-    sentenceCount = getSentenceCount(bookText)
-    syllableCount = getSyllableTotal(bookText)
-    author = getAuthor(headeredText)
-    title = getTitle(headeredText)
-    readingTime = estimateReadingTime(wordCount)
-    gutenbergId = getGutenbergId(headeredText)
-    fkReadingGrade = (
-        0.39 * (wordCount / sentenceCount) + 11.8 * (syllableCount / wordCount) - 15.59
-    )
-
-    tempDict = {
-        "gutenberg_id": gutenbergId,
-        "Title": title,
-        "Author": author,
-        "Path": str(path),
-        "word_count": wordCount,
-        "sentence_count": sentenceCount,
-        "syllable_count": syllableCount,
-        "Flesch-Kincaid": fkReadingGrade,
-        "Reading time": readingTime,
-    }
-    return tempDict
+    result = analyzeText(headeredText)
+    result["Path"] = str(path)
+    return result
 
 
 def fillCorpus():
