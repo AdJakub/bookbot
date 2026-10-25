@@ -13,6 +13,45 @@
             "Flesch-Kincaid": 10.679859483493459,
             "Read Count": 1,
             "Rating": null
+        },
+        {
+            "gutenberg_id": 5200,
+            "id": 2,
+            "Title": "Metamorphosis",
+            "Author": "Franz Kafka",
+            "Path": "books/metamorphosis.txt",
+            "word_count": 21943,
+            "sentence_count": 759,
+            "syllable_count": 30173,
+            "Flesch-Kincaid": 11.910798704296564,
+            "Read Count": 1,
+            "Rating": "10"
+        },
+        {
+            "gutenberg_id": 2554,
+            "id": 3,
+            "Title": "Crime and Punishment",
+            "Author": "Fyodor Dostoyevsky",
+            "Path": "books/crimeandpunishment.txt",
+            "word_count": 203622,
+            "sentence_count": 13418,
+            "syllable_count": 290849,
+            "Flesch-Kincaid": 7.183211574355042,
+            "Read Count": 1,
+            "Rating": "10"
+        },
+        {
+            "gutenberg_id": 2600,
+            "id": 4,
+            "Title": "War and Peace",
+            "Author": "graf Leo Tolstoy",
+            "Path": "books/warandpeace.txt",
+            "word_count": 563296,
+            "sentence_count": 28592,
+            "syllable_count": 819958,
+            "Flesch-Kincaid": 9.270048237869997,
+            "Read Count": 1,
+            "Rating": "10"
         }
     ]
 }
