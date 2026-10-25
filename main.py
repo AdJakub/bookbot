@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 import requests
+from reccomender import recommend
 
 bookDir = os.fsencode("./books")
 
@@ -46,6 +47,11 @@ def main():
     if mode == "logged":
         printLogged(bookList)
         return
+    if mode == "recommend":
+        for rec in recommend(bookList, corpus):
+            print(f"{rec['Score']:.3f} {rec['Title']} by {rec['Author']}")
+        return
+
     if mode == "rate" and int(sys.argv[3]) in range(1, 11):
         rateBook(bookList, path_to_file, sys.argv[3])
         return ()
