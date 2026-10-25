@@ -8,8 +8,8 @@ corpusLocation = "./data/corpus.json"
 
 W_SUBJECT = 1
 W_SHELF = 0.5
-W_FK = 0.3
-W_TIME = 0.3
+W_FK = 0.15
+W_TIME = 0.15
 
 
 def jaccardSimilarity(set1, set2):
@@ -41,7 +41,7 @@ for book in bookList["books"]:
             gid = book["gutenberg_id"]
             likedShelves.update(corpusById[gid]["bookshelves"])
             readFk.append(corpusById[gid]["Flesch-Kincaid"])
-            readRt.append(corpusById[gid]["Reading time"])
+            readRt.append(corpusById[gid]["word_count"] / 260)
 
 fkAverages = statistics.mean(readFk)
 rtAverages = statistics.median(readRt)
@@ -49,8 +49,12 @@ allFk = []
 allRt = []
 
 for corpusBook in corpus["books"]:
-    allFk.append(corpusBook["Flesch-Kincaid"])
-    allRt.append(corpusBook["Reading time"])
+    if (
+        "Category: Encyclopedias/Dictionaries/Reference"
+        not in corpusBook["bookshelves"]
+    ):
+        allFk.append(corpusBook["Flesch-Kincaid"])
+        allRt.append(corpusBook["word_count"] / 260)
 
 fkRange = max(allFk) - min(allFk)
 rtRange = max(allRt) - min(allRt)
@@ -71,11 +75,13 @@ fkScore = {}
 rtScore = {}
 
 for corpusBook in corpus["books"]:
+    if "Category: Encyclopedias/Dictionaries/Reference" in corpusBook["bookshelves"]:
+        continue
     if corpusBook["gutenberg_id"] in excludedBooks:
         continue
     fkDistance = abs(corpusBook["Flesch-Kincaid"] - fkAverages)
     fkSim = 1 - fkDistance / fkRange
-    rtDistance = abs(corpusBook["Reading time"] - rtAverages)
+    rtDistance = abs(corpusBook["word_count"] / 260 - rtAverages)
     rtSim = 1 - rtDistance / rtRange
     subjectSim = jaccardSimilarity(likedSubjects, set(corpusBook["subjects"]))
     shelfSim = jaccardSimilarity(likedShelves, set(corpusBook["bookshelves"]))
@@ -88,7 +94,7 @@ for corpusBook in corpus["books"]:
     )
 
 
-for rec in sorted(scoreTotal.items(), reverse=True, key=itemgetter(1))[:5]:
+for rec in sorted(scoreTotal.items(), reverse=True, key=itemgetter(1))[:10]:
     author = corpusById[rec[0]]["Author"]
     title = corpusById[rec[0]]["Title"]
     formatted = {
@@ -100,7 +106,5 @@ for rec in sorted(scoreTotal.items(), reverse=True, key=itemgetter(1))[:5]:
     }
     recList.append(formatted)
 
-print(min(allFk), max(allFk))
-print(min(allRt), max(allRt))
-print(sorted(fkScore.values()))
-# print(recList)
+
+print(recList)
