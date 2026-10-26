@@ -58,6 +58,27 @@ def buildProfile(library, corpus):
                 readFk.append(corpusById[gid]["Flesch-Kincaid"])
                 readRt.append(minutes(corpusById[gid]))
                 likedSubjects.update(corpusById[gid]["subjects"])
+
+    print(
+        "DEBUG rated books:",
+        [
+            (
+                book.get("Title"),
+                book.get("gutenberg_id"),
+                book.get("Rating"),
+                book.get("gutenberg_id") in corpusById,
+            )
+            for book in library["books"]
+            if book.get("Rating") is not None and int(book["Rating"]) >= MIN_RATING
+        ],
+    )
+
+    print("DEBUG subject count:", len(likedSubjects))
+    print("DEBUG liked subjects:", sorted(likedSubjects))
+
+    if not readFk:
+        return None
+
     if not readFk:
         return None
 
