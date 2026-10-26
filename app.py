@@ -83,7 +83,11 @@ recTab, libTab, addTab, detTab = st.tabs(
 )
 
 with recTab:
-    recommenderResults = recommend(st.session_state["library"], corpus)
+    recommenderResults = recommend(
+        st.session_state["library"],
+        corpus,
+        topN=len(corpus["books"]),
+    )
     if not recommenderResults:
         st.info(
             "Please rate atleast one book with a score of 7 or higher to get recommendations."
