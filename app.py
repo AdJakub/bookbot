@@ -8,12 +8,12 @@ from storage import loadLibrary, saveLibrary
 
 
 @st.cache_data
-def loadCorpus():
-    with open(Path(__file__).parent / "data" / "corpus.json", "r") as c:
-        return json.load(c)
+def loadCorpus(corpusJson):
+    return json.loads(corpusJson)
 
 
-corpus = loadCorpus()
+corpusPath = Path(__file__).parent / "data" / "corpus.json"
+corpus = loadCorpus(corpusPath.read_text(encoding="utf-8"))
 
 
 def enterDemo():
