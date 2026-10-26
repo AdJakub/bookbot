@@ -148,6 +148,30 @@ def recommend(library, corpus, topN=10):
     results.sort(key=itemgetter("Score"), reverse=True)
     top = results[:topN]
 
+    subjectMatches = [
+        (
+            book["Title"],
+            jaccardSimilarity(
+                profile["likedSubjects"],
+                set(book["subjects"]),
+            ),
+        )
+        for book in corpus["books"]
+        if isProse(book) and book["gutenberg_id"] not in profile["readIds"]
+    ]
+
+    print(
+        "DEBUG candidates with subject matches:",
+        sum(score > 0 for _, score in subjectMatches),
+        "out of",
+        len(subjectMatches),
+    )
+
+    print(
+        "DEBUG best subject matches:",
+        sorted(subjectMatches, key=itemgetter(1), reverse=True)[:10],
+    )
+
     return top
 
 
