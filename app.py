@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 import streamlit as st
-from library import newLibrary, setRating
+from library import addBook, newLibrary, setRating
 from reccomender import MIN_RATING, recommend
 from storage import loadLibrary, saveLibrary
 
@@ -63,6 +63,12 @@ def applyRating(gutenbergId):
         saveLibrary(st.session_state["libraryOwner"], st.session_state["library"])
 
 
+def applyAdd(result):
+    addBook(st.session_state["library"], result)
+    if st.session_state["libraryOwner"] != "demo":
+        saveLibrary(st.session_state["libraryOwner"], st.session_state["library"])
+
+
 st.title("Shelfwise")
 
 
@@ -72,7 +78,9 @@ with st.sidebar:
     elif demoOn:
         st.button("Exit demo", on_click=exitDemo)
 
-recTab, libTab = st.tabs(["You might like", "My books"])
+recTab, libTab, addTab, detTab = st.tabs(
+    ["You might like", "My books", "Add a book", "Book Details"]
+)
 
 with recTab:
     recommenderResults = recommend(st.session_state["library"], corpus)
@@ -126,3 +134,21 @@ with libTab:
             args=(book["gutenberg_id"],),
             index=startIndex,
         )
+
+with addTab:
+    selectedBook = st.selectbox(
+        "Choose a book",
+        options=corpus["books"],
+        format_func=lambda book: f"{book['Title']} - {book['Author']}",
+        key="add_book_select",
+    )
+    st.button("Log book", on_click=applyAdd, args=(selectedBook,))
+
+with detTab:
+    selectedBook = st.selectbox(
+        "Choose a book",
+        options=corpus["books"],
+        format_func=lambda book: f"{book['Title']} - {book['Author']}",
+    )
+    if st.button("View details"):
+        on_click = st.write(selectedBook)
