@@ -74,3 +74,7 @@ def setRating(library, gutenbergId, rating):
             book["Rating"] = rating
             return True
     return False
+
+
+def newLibrary():
+    return {"version": 1, "books": []}
