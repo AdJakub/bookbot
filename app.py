@@ -2,9 +2,9 @@ import json
 from pathlib import Path
 
 import streamlit as st
-from library import newLibrary
+from library import newLibrary, setRating
 from reccomender import MIN_RATING, recommend
-from storage import loadLibrary
+from storage import loadLibrary, saveLibrary
 
 
 @st.cache_data
@@ -54,7 +54,17 @@ if "library" not in st.session_state or st.session_state["libraryOwner"] != owne
     st.session_state["library"] = library
     st.session_state["libraryOwner"] = owner
 
+
+def applyRating(gutenbergId):
+    key = f"rating_{gutenbergId}"
+    newRating = st.session_state[key]
+    setRating(st.session_state["library"], gutenbergId, newRating)
+    if st.session_state["libraryOwner"] != "demo":
+        saveLibrary(st.session_state["libraryOwner"], st.session_state["library"])
+
+
 st.title("Shelfwise")
+
 
 with st.sidebar:
     if loggedIn:
@@ -103,3 +113,16 @@ with libTab:
     )
     with st.expander("stats for nerds"):
         st.dataframe(st.session_state["library"]["books"])
+    for book in st.session_state["library"]["books"]:
+        if book["Rating"] is None:
+            startIndex = None
+        else:
+            startIndex = book["Rating"] - 1
+        st.selectbox(
+            book["Title"],
+            range(1, 11),
+            key=f"rating_{book['gutenberg_id']}",
+            on_change=applyRating,
+            args=(book["gutenberg_id"],),
+            index=startIndex,
+        )
