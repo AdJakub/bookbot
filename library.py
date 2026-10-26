@@ -43,7 +43,7 @@ def addBook(library, result, path=None):
         newId = 1
     foundBook = None
     for book in library["books"]:
-        if book["Title"] == result["Title"]:
+        if book["gutenberg_id"] == result["gutenberg_id"]:
             foundBook = book
             break
     if foundBook != None:
@@ -66,3 +66,11 @@ def addBook(library, result, path=None):
         }
         library["books"].append(tempDict)
         return tempDict
+
+
+def setRating(library, gutenbergId, rating):
+    for book in library["books"]:
+        if gutenbergId == book["gutenberg_id"]:
+            book["Rating"] = rating
+            return True
+    return False
