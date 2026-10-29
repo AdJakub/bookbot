@@ -126,6 +126,7 @@ def scoreBook(book, profile):
         "RT": rtSim,
         "Subject": subjectSim,
         "Shelf": shelfSim,
+        "gutenberg_id": book["gutenberg_id"],
     }
 
 
