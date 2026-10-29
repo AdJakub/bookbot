@@ -60,7 +60,9 @@ def buildProfile(library, corpus):
                 likedShelves.update(corpusById[gid]["bookshelves"])
                 readFk.append(corpusById[gid]["Flesch-Kincaid"])
                 readRt.append(minutes(corpusById[gid]))
-                likedSubjects.update(corpusById[gid]["subjects"])
+                for record in corpusById[gid]["subject_records"]:
+                    if record["main_subject"]:
+                        likedSubjects.add(record["main_subject"])
 
     print(
         "DEBUG rated books:",
@@ -119,9 +121,14 @@ def buildProfile(library, corpus):
 
 
 def scoreBook(book, profile):
+    candidateSubjects = set()
+    for record in book["subject_records"]:
+        if record["main_subject"]:
+            candidateSubjects.add(record["main_subject"])
+
     fkSim = closeness(book["Flesch-Kincaid"], profile["fk"], profile["fkRange"])
     rtSim = closeness(minutes(book), profile["rt"], profile["rtRange"])
-    subjectSim = jaccardSimilarity(profile["likedSubjects"], set(book["subjects"]))
+    subjectSim = jaccardSimilarity(profile["likedSubjects"], candidateSubjects)
     shelfSim = jaccardSimilarity(profile["likedShelves"], set(book["bookshelves"]))
     total = W_SUBJECT * subjectSim + W_SHELF * shelfSim + W_FK * fkSim + W_TIME * rtSim
     return {

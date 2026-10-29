@@ -37,6 +37,8 @@ def normalizeSubjects(subjects):
 
 
 for book in corpus["books"]:
-    if book["Title"] == "War and Peace":
-        records = normalizeSubjects(book["subjects"])
-        print(records)
+    records = normalizeSubjects(book["subjects"])
+    book["subject_records"] = records
+jsonized = json.dumps(corpus, indent=4)
+with open(corpusLocation, "w") as c:
+    c.write(jsonized)

@@ -3,3 +3,5 @@ books/
 .streamlit/secrets.toml
 __pycache__/
 data/corpus copy.json
+__pycache__/
+*.py[cod]
