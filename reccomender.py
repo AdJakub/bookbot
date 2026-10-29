@@ -1,7 +1,7 @@
 import json
+import math
 import statistics
 from operator import itemgetter
-from re import L
 
 dataLocation = "./data/books.json"
 corpusLocation = "./data/corpus.json"
@@ -28,7 +28,8 @@ def isProse(book):
 def closeness(value, typical, valueRange):
     distance = abs(value - typical)
     fraction = distance / valueRange
-    return 1 - fraction
+    result = 1 - fraction
+    return max(0, result)
 
 
 def jaccardSimilarity(set1, set2):
@@ -59,30 +60,10 @@ def buildProfile(library, corpus):
                     continue
                 likedShelves.update(corpusById[gid]["bookshelves"])
                 readFk.append(corpusById[gid]["Flesch-Kincaid"])
-                readRt.append(minutes(corpusById[gid]))
+                readRt.append(math.log(minutes(corpusById[gid])))
                 for record in corpusById[gid]["subject_records"]:
                     if record["main_subject"]:
                         likedSubjects.add(record["main_subject"])
-
-    print(
-        "DEBUG rated books:",
-        [
-            (
-                book.get("Title"),
-                book.get("gutenberg_id"),
-                book.get("Rating"),
-                book.get("gutenberg_id") in corpusById,
-            )
-            for book in library["books"]
-            if book.get("Rating") is not None and int(book["Rating"]) >= MIN_RATING
-        ],
-    )
-
-    print("DEBUG subject count:", len(likedSubjects))
-    print("DEBUG liked subjects:", sorted(likedSubjects))
-
-    if not readFk:
-        return None
 
     if not readFk:
         return None
@@ -95,10 +76,16 @@ def buildProfile(library, corpus):
     for corpusBook in corpus["books"]:
         if isProse(corpusBook):
             allFk.append(corpusBook["Flesch-Kincaid"])
-            allRt.append(minutes(corpusBook))
+            allRt.append(math.log(minutes(corpusBook)))
 
-    fkRange = max(allFk) - min(allFk)
-    rtRange = max(allRt) - min(allRt)
+    cutsFk = statistics.quantiles(allFk, n=20)
+    fkLow = cutsFk[0]
+    fkHigh = cutsFk[-1]
+    cutsRt = statistics.quantiles(allRt, n=20)
+    rtLow = cutsRt[0]
+    rtHigh = cutsRt[-1]
+    fkRange = fkHigh - fkLow
+    rtRange = rtHigh - rtLow
 
     profile = {
         "likedSubjects": likedSubjects,
@@ -127,7 +114,7 @@ def scoreBook(book, profile):
             candidateSubjects.add(record["main_subject"])
 
     fkSim = closeness(book["Flesch-Kincaid"], profile["fk"], profile["fkRange"])
-    rtSim = closeness(minutes(book), profile["rt"], profile["rtRange"])
+    rtSim = closeness(math.log(minutes(book)), profile["rt"], profile["rtRange"])
     subjectSim = jaccardSimilarity(profile["likedSubjects"], candidateSubjects)
     shelfSim = jaccardSimilarity(profile["likedShelves"], set(book["bookshelves"]))
     total = W_SUBJECT * subjectSim + W_SHELF * shelfSim + W_FK * fkSim + W_TIME * rtSim
@@ -157,30 +144,6 @@ def recommend(library, corpus, topN=10):
         results.append(scoreBook(corpusBook, profile))
     results.sort(key=itemgetter("Score"), reverse=True)
     top = results[:topN]
-
-    subjectMatches = [
-        (
-            book["Title"],
-            jaccardSimilarity(
-                profile["likedSubjects"],
-                set(book["subjects"]),
-            ),
-        )
-        for book in corpus["books"]
-        if isProse(book) and book["gutenberg_id"] not in profile["readIds"]
-    ]
-
-    print(
-        "DEBUG candidates with subject matches:",
-        sum(score > 0 for _, score in subjectMatches),
-        "out of",
-        len(subjectMatches),
-    )
-
-    print(
-        "DEBUG best subject matches:",
-        sorted(subjectMatches, key=itemgetter(1), reverse=True)[:10],
-    )
 
     return top
 
