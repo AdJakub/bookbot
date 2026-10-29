@@ -1,6 +1,9 @@
+import csv
 import json
+import math
 import os
 import sys
+import time
 from pathlib import Path
 
 import requests
@@ -151,24 +154,60 @@ def fillCorpus():
         json.dump(corpus, d, indent=4)
 
 
-def enrichCorpus():
-    list = []
-    index = {}
-    for book in corpus["books"]:
-        index[book["gutenberg_id"]] = book
+def loadCatalog():
+    catalog = {}
+    with open("./data/pg_catalog.csv", encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if row["Text#"].isdigit() == False:
+                continue
+            id = int(row["Text#"])
+            subjCell = row["Subjects"]
+            if subjCell:
+                subjects = subjCell.split("; ")
+            else:
+                subjects = []
+            shelvesCell = row["Bookshelves"]
+            if shelvesCell:
+                shelves = shelvesCell.split("; ")
+            else:
+                shelves = []
+            catalog[id] = {
+                "title": row["Title"],
+                "subjects": subjects,
+                "shelves": shelves,
+            }
+    return catalog
+
+
+def establishMissing():
+    missing = 0
     for book in corpus["books"]:
         if book["subjects"] is None:
-            list.append(book["gutenberg_id"])
-    for start in range(0, len(list), 32):
-        chunk = list[start : start + 32]
-        response = requests.get(
-            "https://gutendex.com/books", params={"ids": ",".join(map(str, chunk))}
-        )
-        data = response.json()
-        for item in data["results"]:
-            record = index[item["id"]]
-            record["subjects"] = item["subjects"]
-            record["bookshelves"] = item["bookshelves"]
+            missing += 1
+    return missing
+
+
+def establishChunks():
+    missing = establishMissing()
+    return math.ceil(missing / 32)
+
+
+def enrichCorpus():
+    catalog = loadCatalog()
+    filled = 0
+    notFound = 0
+    for book in corpus["books"]:
+        if book["subjects"] is None:
+            entry = catalog.get(book["gutenberg_id"])
+            if entry is None:
+                notFound += 1
+            else:
+                book["subjects"] = entry["subjects"]
+                book["bookshelves"] = entry["shelves"]
+                filled += 1
+    print(filled, notFound)
+
     text = json.dumps(corpus, indent=4)
     with open(corpusLocation, "w") as f:
         f.write(text)

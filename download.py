@@ -12,6 +12,8 @@ API_URL = "https://gutendex.com/books/"
 
 MIRROR_BASE = "https://gutenberg.pglaf.org/cache/epub"
 
+RETRY_STATUSES = {429, 500, 502, 503, 504}
+
 session = requests.Session()
 session.headers.update({"User-Agent": "PersonalGutenbergDownloader/1.0"})
 
@@ -21,7 +23,7 @@ def get_with_retry(
     params: dict | None = None,
     stream: bool = False,
     timeout: tuple[int, int] = (10, 120),
-    attempts: int = 5,
+    attempts: int = 8,
 ) -> requests.Response:
 
     if attempts < 1:
@@ -33,14 +35,22 @@ def get_with_retry(
             response.raise_for_status()
             return response
 
-        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError):
+        except (
+            requests.exceptions.Timeout,
+            requests.exceptions.ConnectionError,
+            requests.exceptions.HTTPError,
+        ) as error:
+            if isinstance(error, requests.exceptions.HTTPError):
+                if error.response.status_code not in RETRY_STATUSES:
+                    raise
+
             if attempt == attempts - 1:
                 raise
 
-            delay = min(2**attempt, 30)
+            delay = min(2 ** (attempt + 1), 60)
             print(
-                f"Request failed. Retrying in {delay} seconds "
-                f"({attempt + 2}/{attempts})..."
+                f"Request failed ({error.__class__.__name__}). "
+                f"Retrying in {delay} seconds ({attempt + 2}/{attempts})..."
             )
             time.sleep(delay)
 
@@ -61,7 +71,7 @@ def download_book(book):
     filename = DOWNLOAD_DIR / (f"{clean_filename(title)}.txt")
 
     if filename.exists() and filename.stat().st_size > 0:
-        return True, f"already exists: {filename.name}"
+        return "skipped", f"already exists: {filename.name}"
 
     url = f"{MIRROR_BASE}/{book_id}/pg{book_id}.txt"
     temp_file = filename.with_suffix(".txt.part")
@@ -76,13 +86,13 @@ def download_book(book):
                 raise ValueError("The downloaded file was empty")
 
         temp_file.replace(filename)
-        return True, f"Downloaded: {filename.name}"
+        return "downloaded", f"Downloaded: {filename.name}"
 
     except (requests.RequestException, OSError, ValueError) as error:
         if temp_file.exists():
             temp_file.unlink()
 
-        return False, f"Failed: {title} (ID {book_id}): {error}"
+        return "failed", f"Failed: {title} (ID {book_id}): {error}"
 
 
 def download_top_books():
