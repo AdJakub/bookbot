@@ -1,0 +1,746 @@
+[
+    {
+        "name": "Gothic and horror",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 345,
+                    "Title": "Dracula",
+                    "Author": "Bram Stoker",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 41445,
+                    "Title": "Frankenstein; Or, The Modern Prometheus",
+                    "Author": "Mary Wollstonecraft Shelley",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 43,
+                    "Title": "The strange case of Dr. Jekyll and Mr. Hyde",
+                    "Author": "Robert Louis Stevenson",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 174,
+                    "Title": "The Picture of Dorian Gray",
+                    "Author": "Oscar Wilde",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 209,
+                    "Title": "The Turn of the Screw",
+                    "Author": "Henry James",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 601,
+                    "Title": "The Monk: A Romance",
+                    "Author": "M. G. Lewis",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 696,
+                    "Title": "The Castle of Otranto",
+                    "Author": "Horace Walpole",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 10007,
+                    "Title": "Carmilla",
+                    "Author": "Joseph Sheridan Le Fanu",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 768,
+                    "Title": "Wuthering Heights",
+                    "Author": "Emily Brontë",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "Early sci-fi and adventure",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 35,
+                    "Title": "The Time Machine",
+                    "Author": "H. G. Wells",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 36,
+                    "Title": "The war of the worlds",
+                    "Author": "H. G. Wells",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 159,
+                    "Title": "The island of Doctor Moreau",
+                    "Author": "H. G. Wells",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 5230,
+                    "Title": "The Invisible Man: A Grotesque Romance",
+                    "Author": "H. G. Wells",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 164,
+                    "Title": "Twenty Thousand Leagues under the Sea",
+                    "Author": "Jules Verne",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 18857,
+                    "Title": "A Journey to the Centre of the Earth",
+                    "Author": "Jules Verne",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 139,
+                    "Title": "The Lost World",
+                    "Author": "Arthur Conan Doyle",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1268,
+                    "Title": "The Mysterious Island",
+                    "Author": "Jules Verne",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 103,
+                    "Title": "Around the World in Eighty Days",
+                    "Author": "Jules Verne",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "Victorian novels",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 1400,
+                    "Title": "Great Expectations",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1023,
+                    "Title": "Bleak House",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 730,
+                    "Title": "Oliver Twist",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 145,
+                    "Title": "Middlemarch",
+                    "Author": "George Eliot",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 110,
+                    "Title": "Tess of the d'Urbervilles: A Pure Woman",
+                    "Author": "Thomas Hardy",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 394,
+                    "Title": "Cranford",
+                    "Author": "Elizabeth Cleghorn Gaskell",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 583,
+                    "Title": "The Woman in White",
+                    "Author": "Wilkie Collins",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 155,
+                    "Title": "The Moonstone",
+                    "Author": "Wilkie Collins",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1260,
+                    "Title": "Jane Eyre: An Autobiography",
+                    "Author": "Charlotte Brontë",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "Russian and existential",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 2554,
+                    "Title": "Crime and Punishment",
+                    "Author": "Fyodor Dostoyevsky",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 2638,
+                    "Title": "The Idiot",
+                    "Author": "Fyodor Dostoyevsky",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 28054,
+                    "Title": "The Brothers Karamazov",
+                    "Author": "Fyodor Dostoyevsky",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 600,
+                    "Title": "Notes from the Underground",
+                    "Author": "Fyodor Dostoyevsky",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1399,
+                    "Title": "Anna Karenina",
+                    "Author": "graf Leo Tolstoy",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 2600,
+                    "Title": "War and Peace",
+                    "Author": "graf Leo Tolstoy",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 5200,
+                    "Title": "Metamorphosis",
+                    "Author": "Franz Kafka",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 219,
+                    "Title": "Heart of Darkness",
+                    "Author": "Joseph Conrad",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "Philosophy",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 1497,
+                    "Title": "The Republic",
+                    "Author": "Plato",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1656,
+                    "Title": "Apology",
+                    "Author": "Plato",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1672,
+                    "Title": "Gorgias",
+                    "Author": "Plato",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1600,
+                    "Title": "Symposium",
+                    "Author": "Plato",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1658,
+                    "Title": "Phaedo",
+                    "Author": "Plato",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 4363,
+                    "Title": "Beyond Good and Evil",
+                    "Author": "Friedrich Wilhelm Nietzsche",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1998,
+                    "Title": "Thus Spake Zarathustra: A Book for All and None",
+                    "Author": "Friedrich Wilhelm Nietzsche",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 52319,
+                    "Title": "The Genealogy of Morals",
+                    "Author": "Friedrich Wilhelm Nietzsche",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 52263,
+                    "Title": "The Twilight of the Idols; or, How to Philosophize with the Hammer. The Antichrist",
+                    "Author": "Friedrich Wilhelm Nietzsche",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 8438,
+                    "Title": "The Nicomachean ethics of Aristotle",
+                    "Author": "Aristotle",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "American classics",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 76,
+                    "Title": "Adventures of Huckleberry Finn",
+                    "Author": "Mark Twain",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 74,
+                    "Title": "The Adventures of Tom Sawyer, Complete",
+                    "Author": "Mark Twain",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 25344,
+                    "Title": "The Scarlet Letter",
+                    "Author": "Nathaniel Hawthorne",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 2701,
+                    "Title": "Moby Dick; Or, The Whale",
+                    "Author": "Herman Melville",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 11231,
+                    "Title": "Bartleby, the Scrivener: A Story of Wall-Street",
+                    "Author": "Herman Melville",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 86,
+                    "Title": "A Connecticut Yankee in King Arthur's Court",
+                    "Author": "Mark Twain",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1837,
+                    "Title": "The Prince and the Pauper",
+                    "Author": "Mark Twain",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 245,
+                    "Title": "Life on the Mississippi",
+                    "Author": "Mark Twain",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "Swashbuckling adventure",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 1257,
+                    "Title": "The three musketeers",
+                    "Author": "Alexandre Dumas",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1184,
+                    "Title": "The Count of Monte Cristo",
+                    "Author": "Alexandre Dumas",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 120,
+                    "Title": "Treasure Island",
+                    "Author": "Robert Louis Stevenson",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 421,
+                    "Title": "Kidnapped",
+                    "Author": "Robert Louis Stevenson",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 521,
+                    "Title": "The Life and Adventures of Robinson Crusoe",
+                    "Author": "Daniel Defoe",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 829,
+                    "Title": "Gulliver's Travels into Several Remote Nations of the World",
+                    "Author": "Jonathan Swift",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 135,
+                    "Title": "Les Misérables",
+                    "Author": "Victor Hugo",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 2610,
+                    "Title": "Notre-Dame de Paris",
+                    "Author": "Victor Hugo",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "Mystery and detective",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 1661,
+                    "Title": "The Adventures of Sherlock Holmes",
+                    "Author": "Arthur Conan Doyle",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 834,
+                    "Title": "The Memoirs of Sherlock Holmes",
+                    "Author": "Arthur Conan Doyle",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 108,
+                    "Title": "The Return of Sherlock Holmes",
+                    "Author": "Arthur Conan Doyle",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 2097,
+                    "Title": "The Sign of the Four",
+                    "Author": "Arthur Conan Doyle",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 3289,
+                    "Title": "The Valley of Fear",
+                    "Author": "Arthur Conan Doyle",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 2852,
+                    "Title": "The Hound of the Baskervilles",
+                    "Author": "Arthur Conan Doyle",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 204,
+                    "Title": "The innocence of Father Brown",
+                    "Author": "G. K. Chesterton",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 223,
+                    "Title": "The wisdom of Father Brown",
+                    "Author": "G. K. Chesterton",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 863,
+                    "Title": "The Mysterious Affair at Styles",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 69087,
+                    "Title": "The murder of Roger Ackroyd",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1155,
+                    "Title": "The Secret Adversary",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "History reader",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 2707,
+                    "Title": "The History of Herodotus — Volume 1",
+                    "Author": "Herodotus",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 7142,
+                    "Title": "The History of the Peloponnesian War",
+                    "Author": "Thucydides",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 25717,
+                    "Title": "The History of the Decline and Fall of the Roman Empire",
+                    "Author": "Edward Gibbon",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 6400,
+                    "Title": "The Lives of the Twelve Caesars, Complete",
+                    "Author": "Suetonius",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 46976,
+                    "Title": "The Anabasis of Alexander",
+                    "Author": "Arrian",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1170,
+                    "Title": "Anabasis",
+                    "Author": "Xenophon",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 78122,
+                    "Title": "The history of the Norman conquest of England, its causes and its results, Volume 3 (of 6)",
+                    "Author": "Edward A. Freeman",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 68348,
+                    "Title": "England under the Angevin Kings, Volumes I and II",
+                    "Author": "Kate Norgate",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 57336,
+                    "Title": "Ancient Britain and the Invasions of Julius Caesar",
+                    "Author": "T. Rice Holmes",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 32474,
+                    "Title": "The Memoirs of the Conquistador Bernal Diaz del Castillo, Vol 1 (of 2)",
+                    "Author": "Bernal Díaz del Castillo",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "Author: Jane Austen",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 161,
+                    "Title": "Sense and Sensibility",
+                    "Author": "Jane Austen",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 158,
+                    "Title": "Emma",
+                    "Author": "Jane Austen",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1342,
+                    "Title": "Pride and Prejudice",
+                    "Author": "Jane Austen",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 141,
+                    "Title": "Mansfield Park",
+                    "Author": "Jane Austen",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 121,
+                    "Title": "Northanger Abbey",
+                    "Author": "Jane Austen",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 105,
+                    "Title": "Persuasion",
+                    "Author": "Jane Austen",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "Author: Charles Dickens",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 580,
+                    "Title": "The Pickwick Papers",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 46,
+                    "Title": "A Christmas Carol in Prose; Being a Ghost Story of Christmas",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1400,
+                    "Title": "Great Expectations",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 730,
+                    "Title": "Oliver Twist",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1023,
+                    "Title": "Bleak House",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 967,
+                    "Title": "Nicholas Nickleby",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 98,
+                    "Title": "A Tale of Two Cities",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 786,
+                    "Title": "Hard Times",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 766,
+                    "Title": "David Copperfield",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 564,
+                    "Title": "The Mystery of Edwin Drood",
+                    "Author": "Charles Dickens",
+                    "Rating": 10
+                }
+            ]
+        }
+    },
+    {
+        "name": "Author: Agatha Christie",
+        "library": {
+            "version": 1,
+            "books": [
+                {
+                    "gutenberg_id": 70114,
+                    "Title": "The Big Four",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 75288,
+                    "Title": "The Seven Dials mystery",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 72824,
+                    "Title": "The mystery of the Blue Train",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 67173,
+                    "Title": "The Missing Will",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 69087,
+                    "Title": "The murder of Roger Ackroyd",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 863,
+                    "Title": "The Mysterious Affair at Styles",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 78084,
+                    "Title": "The mysterious Mr. Quin",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 61262,
+                    "Title": "Poirot Investigates",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 1155,
+                    "Title": "The Secret Adversary",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                },
+                {
+                    "gutenberg_id": 61168,
+                    "Title": "The Man in the Brown Suit",
+                    "Author": "Agatha Christie",
+                    "Rating": 10
+                }
+            ]
+        }
+    }
+]

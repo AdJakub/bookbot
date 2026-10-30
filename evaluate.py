@@ -1,15 +1,19 @@
 import json
 import statistics
 
-from reccomender import MIN_RATING, recommend
+from reccomender import MIN_RATING, buildProfile, recommend
 
 corpusLocation = "./data/corpus.json"
 libraryLocation = "./data/demo_books.json"
+benchLocation = "./data/benchmark_readers.json"
 with open(corpusLocation, "r") as c:
     corpus = json.load(c)
 
 with open(libraryLocation, "r") as l:
     library = json.load(l)
+
+with open(benchLocation, "r") as b:
+    bench = json.load(b)
 
 
 def leaveOneOut(library, corpus):
@@ -31,8 +35,10 @@ def leaveOneOut(library, corpus):
                 ranks.append(i + 1)
                 break
 
-    print(ranks, statistics.mean(ranks))
+    return (ranks, statistics.mean(ranks))
 
 
-leaveOneOut(library, corpus)
+for reader in bench:
+    print(reader["name"], leaveOneOut(reader["library"], corpus))
+
 # Demo Library result is [75, 22, 8, 2, 201] 61.6

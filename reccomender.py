@@ -1,6 +1,7 @@
 import json
 import math
 import statistics
+from collections import defaultdict
 from operator import itemgetter
 
 dataLocation = "./data/books.json"
@@ -15,6 +16,8 @@ W_SUBJECT = 1
 W_SHELF = 0.5
 W_FK = 0.15
 W_TIME = 0.15
+# parked subsubject socring
+WEAK_CREDIT = 1.0
 
 
 def minutes(book):
@@ -50,6 +53,7 @@ def buildProfile(library, corpus):
     readFk = []
     readRt = []
     excludedBooks = set()
+    likedPaths = defaultdict(set)
 
     for book in library["books"]:
         excludedBooks.add(book["gutenberg_id"])
@@ -64,6 +68,9 @@ def buildProfile(library, corpus):
                 for record in corpusById[gid]["subject_records"]:
                     if record["main_subject"]:
                         likedSubjects.add(record["main_subject"])
+                        likedPaths[record["main_subject"]].add(
+                            "Fiction" in record["sub_subject"]
+                        )
 
     if not readFk:
         return None
@@ -90,6 +97,7 @@ def buildProfile(library, corpus):
     profile = {
         "likedSubjects": likedSubjects,
         "likedShelves": likedShelves,
+        "likedPaths": likedPaths,
         "fk": fkAverages,
         "rt": rtAverages,
         "fkRange": fkRange,
@@ -109,13 +117,28 @@ def buildProfile(library, corpus):
 
 def scoreBook(book, profile):
     candidateSubjects = set()
+    candidatePaths = defaultdict(set)
     for record in book["subject_records"]:
         if record["main_subject"]:
             candidateSubjects.add(record["main_subject"])
+            candidatePaths[record["main_subject"]].add(
+                "Fiction" in record["sub_subject"]
+            )
+    sharedPaths = candidatePaths.keys() & profile["likedPaths"].keys()
+    creditSum = 0
+    for subject in sharedPaths:
+        if candidatePaths[subject] & profile["likedPaths"][subject]:
+            creditSum += 1.0
+        else:
+            creditSum += WEAK_CREDIT
+    subDenom = len(candidateSubjects.union(profile["likedSubjects"]))
+    if subDenom == 0:
+        subjectSim = 0
+    else:
+        subjectSim = creditSum / subDenom
 
     fkSim = closeness(book["Flesch-Kincaid"], profile["fk"], profile["fkRange"])
     rtSim = closeness(math.log(minutes(book)), profile["rt"], profile["rtRange"])
-    subjectSim = jaccardSimilarity(profile["likedSubjects"], candidateSubjects)
     shelfSim = jaccardSimilarity(profile["likedShelves"], set(book["bookshelves"]))
     total = W_SUBJECT * subjectSim + W_SHELF * shelfSim + W_FK * fkSim + W_TIME * rtSim
     return {
