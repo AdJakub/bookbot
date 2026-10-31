@@ -1,7 +1,7 @@
 import json
 import math
 import statistics
-from collections import defaultdict
+from collections import Counter, defaultdict
 from operator import itemgetter
 
 dataLocation = "./data/books.json"
@@ -43,6 +43,21 @@ def jaccardSimilarity(set1, set2):
 
 
 def buildProfile(library, corpus):
+    counter = Counter()
+    for book in corpus["books"]:
+        bookSubjects = set()
+        for subject in book["subject_records"]:
+            if subject["main_subject"]:
+                bookSubjects.add(subject["main_subject"])
+        counter.update(bookSubjects)
+    subjectWeightDict = {}
+    corpusCount = len(corpus["books"])
+    for subject, count in counter.items():
+        if count == 1:
+            subjectWeightDict[subject] = 0
+        else:
+            subjectWeightDict[subject] = math.log(corpusCount / count)
+
     corpusById = {}
     for corpusBook in corpus["books"]:
         corpusById[corpusBook["gutenberg_id"]] = corpusBook
@@ -91,6 +106,7 @@ def buildProfile(library, corpus):
 
     profile = {
         "likedSubjects": likedSubjects,
+        "subjectWeights": subjectWeightDict,
         "likedShelves": likedShelves,
         "fk": fkAverages,
         "rt": rtAverages,
@@ -115,7 +131,20 @@ def scoreBook(book, profile):
         if record["main_subject"]:
             candidateSubjects.add(record["main_subject"])
 
-    subjectSim = jaccardSimilarity(profile["likedSubjects"], candidateSubjects)
+    sharedSubjects = profile["likedSubjects"] & candidateSubjects
+    subjectsUnion = profile["likedSubjects"] | candidateSubjects
+    sharedTotal = 0
+    for subject in sharedSubjects:
+        sharedTotal += profile["subjectWeights"][subject]
+    unionTotal = 0
+    for subject in subjectsUnion:
+        unionTotal += profile["subjectWeights"][subject]
+
+    if unionTotal == 0:
+        subjectSim = 0
+    else:
+        subjectSim = sharedTotal / unionTotal
+    # jaccardSimilarity(profile["likedSubjects"], candidateSubjects)
     fkSim = closeness(book["Flesch-Kincaid"], profile["fk"], profile["fkRange"])
     rtSim = closeness(math.log(minutes(book)), profile["rt"], profile["rtRange"])
     shelfSim = jaccardSimilarity(profile["likedShelves"], set(book["bookshelves"]))

@@ -16,7 +16,7 @@ with open(libraryLocation, "r") as l:
 with open(benchLocation, "r") as b:
     bench = json.load(b)
 
-candidateWeights = [0, 0.15, 0.3, 0.6]
+candidateWeights = [0, 0.25, 0.5, 1, 2]
 
 
 def leaveOneOut(library, corpus):
@@ -41,19 +41,21 @@ def leaveOneOut(library, corpus):
     return ranks
 
 
-allRanks = []
-for reader in bench:
-    allRanks.extend(leaveOneOut(reader["library"], corpus))
-mean = statistics.mean(allRanks)
-median = statistics.median(allRanks)
-tenOrLower = 0
-twentyfiveOrLower = 0
-for rank in allRanks:
-    if rank <= 10:
-        tenOrLower += 1
-    if rank <= 25:
-        twentyfiveOrLower += 1
-print(mean, median, tenOrLower, twentyfiveOrLower)
-
+for weight in candidateWeights:
+    reccomender.W_SHELF = weight
+    allRanks = []
+    for reader in bench:
+        allRanks.extend(leaveOneOut(reader["library"], corpus))
+    mean = statistics.mean(allRanks)
+    median = statistics.median(allRanks)
+    tenOrLower = 0
+    twentyfiveOrLower = 0
+    for rank in allRanks:
+        if rank <= 10:
+            tenOrLower += 1
+        if rank <= 25:
+            twentyfiveOrLower += 1
+    print(reccomender.W_SHELF, mean, median, tenOrLower, twentyfiveOrLower)
+reccomender.W_SHELF = 0.5
 
 # Demo Library result is [75, 22, 8, 2, 201] 61.6
