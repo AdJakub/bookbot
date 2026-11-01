@@ -16,7 +16,7 @@ with open(libraryLocation, "r") as l:
 with open(benchLocation, "r") as b:
     bench = json.load(b)
 
-candidateWeights = [0, 0.25, 0.5, 1, 2]
+candidateWeights = [6, 5, 3, 0]
 
 
 def leaveOneOut(library, corpus):
@@ -41,27 +41,35 @@ def leaveOneOut(library, corpus):
     return ranks
 
 
-allRanks = []
-rankPerReader = {}
-for reader in bench:
-    result = leaveOneOut(reader["library"], corpus)
-    allRanks.extend(result)
-    rankPerReader[reader["name"]] = result
-for reader, result in rankPerReader.items():
-    print(reader, statistics.mean(result), result)
-mean = statistics.mean(allRanks)
-median = statistics.median(allRanks)
-tenOrLower = 0
-twentyfiveOrLower = 0
-overHundred = 0
-for rank in allRanks:
-    if rank <= 10:
-        tenOrLower += 1
-    if rank <= 25:
-        twentyfiveOrLower += 1
-    if rank >= 100:
-        overHundred += 1
-print(mean, median, tenOrLower, twentyfiveOrLower, overHundred, sorted(allRanks)[-15:])
+def runBenchark():
+    allRanks = []
+    rankPerReader = {}
+    for reader in bench:
+        result = leaveOneOut(reader["library"], corpus)
+        allRanks.extend(result)
+        rankPerReader[reader["name"]] = result
+    mean = statistics.mean(allRanks)
+    median = statistics.median(allRanks)
+    tenOrLower = 0
+    twentyfiveOrLower = 0
+    overHundred = 0
+    for rank in allRanks:
+        if rank <= 10:
+            tenOrLower += 1
+        if rank <= 25:
+            twentyfiveOrLower += 1
+        if rank >= 100:
+            overHundred += 1
+    return (
+        mean,
+        median,
+        tenOrLower,
+        twentyfiveOrLower,
+        overHundred,
+        sorted(allRanks)[-15:],
+    )
 
 
+results = runBenchark()
+print(results)
 # Demo Library result is [75, 22, 8, 2, 201] 61.6

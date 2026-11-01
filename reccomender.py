@@ -16,6 +16,8 @@ W_SUBJECT = 1
 W_SHELF = 0.5
 W_FK = 0.15
 W_TIME = 0.15
+RATING_OFFSET = 6
+USE_RATING_POINTS = True
 
 
 def minutes(book):
@@ -84,14 +86,12 @@ def buildProfile(library, corpus):
                     if record["main_subject"]:
                         likedSubjects.add(record["main_subject"])
                         likedBookSubjects.add(record["main_subject"])
-                if int(book["Rating"]) == 7:
+                    # if int(book["Rating"]) == 7:
                     subjectScoreCount = 1
-                elif int(book["Rating"]) == 8:
-                    subjectScoreCount = 2
-                elif int(book["Rating"]) == 9:
-                    subjectScoreCount = 3
-                elif int(book["Rating"]) == 10:
-                    subjectScoreCount = 4
+                if USE_RATING_POINTS == True:
+                    subjectScoreCount = int(book["Rating"]) - RATING_OFFSET
+                else:
+                    subjectScoreCount = 1
                 for subject in likedBookSubjects:
                     likedSubjectCountB[subject] += subjectScoreCount
 
