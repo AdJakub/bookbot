@@ -1,7 +1,7 @@
 import json
 import math
 import statistics
-from collections import Counter, defaultdict
+from collections import Counter
 from operator import itemgetter
 
 dataLocation = "./data/books.json"
@@ -16,7 +16,6 @@ W_SUBJECT = 1
 W_SHELF = 0.5
 W_FK = 0.15
 W_TIME = 0.15
-# parked subsubject socring
 
 
 def minutes(book):
@@ -64,12 +63,10 @@ def buildProfile(library, corpus):
 
     likedShelves = set()
     likedSubjects = set()
-    likedSubjectCount = Counter()
     likedSubjectCountB = Counter()
     readFk = []
     readRt = []
     excludedBooks = set()
-    tallyCounter = 0
     shareDict = {}
 
     for book in library["books"]:
@@ -87,7 +84,6 @@ def buildProfile(library, corpus):
                     if record["main_subject"]:
                         likedSubjects.add(record["main_subject"])
                         likedBookSubjects.add(record["main_subject"])
-                likedSubjectCount.update(likedBookSubjects)
                 if int(book["Rating"]) == 7:
                     subjectScoreCount = 1
                 elif int(book["Rating"]) == 8:
@@ -96,7 +92,6 @@ def buildProfile(library, corpus):
                     subjectScoreCount = 3
                 elif int(book["Rating"]) == 10:
                     subjectScoreCount = 4
-                tallyCounter += subjectScoreCount
                 for subject in likedBookSubjects:
                     likedSubjectCountB[subject] += subjectScoreCount
 
@@ -125,8 +120,6 @@ def buildProfile(library, corpus):
     fkRange = fkHigh - fkLow
     rtRange = rtHigh - rtLow
 
-    # print(likedSubjectCount)
-    # print(likedSubjectCountB)
     profile = {
         "likedSubjects": likedSubjects,
         "subjectWeights": subjectWeightDict,
@@ -139,14 +132,6 @@ def buildProfile(library, corpus):
         "share": shareDict,
     }
     return profile
-
-
-# for corpusBook in corpus["books"]:
-
-#    if isProse(corpusBook):
-#    continue
-# if corpusBook["gutenberg_id"] in excludedBooks:
-#    continue
 
 
 def scoreBook(book, profile):
@@ -168,7 +153,6 @@ def scoreBook(book, profile):
         subjectSim = 0
     else:
         subjectSim = sharedTotal / unionTotal
-    # jaccardSimilarity(profile["likedSubjects"], candidateSubjects)
     fkSim = closeness(book["Flesch-Kincaid"], profile["fk"], profile["fkRange"])
     rtSim = closeness(math.log(minutes(book)), profile["rt"], profile["rtRange"])
     shelfSim = jaccardSimilarity(profile["likedShelves"], set(book["bookshelves"]))
