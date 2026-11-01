@@ -64,9 +64,13 @@ def buildProfile(library, corpus):
 
     likedShelves = set()
     likedSubjects = set()
+    likedSubjectCount = Counter()
+    likedSubjectCountB = Counter()
     readFk = []
     readRt = []
     excludedBooks = set()
+    tallyCounter = 0
+    shareDict = {}
 
     for book in library["books"]:
         excludedBooks.add(book["gutenberg_id"])
@@ -78,13 +82,30 @@ def buildProfile(library, corpus):
                 likedShelves.update(corpusById[gid]["bookshelves"])
                 readFk.append(corpusById[gid]["Flesch-Kincaid"])
                 readRt.append(math.log(minutes(corpusById[gid])))
+                likedBookSubjects = set()
                 for record in corpusById[gid]["subject_records"]:
                     if record["main_subject"]:
                         likedSubjects.add(record["main_subject"])
+                        likedBookSubjects.add(record["main_subject"])
+                likedSubjectCount.update(likedBookSubjects)
+                if int(book["Rating"]) == 7:
+                    subjectScoreCount = 1
+                elif int(book["Rating"]) == 8:
+                    subjectScoreCount = 2
+                elif int(book["Rating"]) == 9:
+                    subjectScoreCount = 3
+                elif int(book["Rating"]) == 10:
+                    subjectScoreCount = 4
+                tallyCounter += subjectScoreCount
+                for subject in likedBookSubjects:
+                    likedSubjectCountB[subject] += subjectScoreCount
 
     if not readFk:
         return None
+    biggest = max(likedSubjectCountB.values(), default=1)
 
+    for subject in likedSubjectCountB:
+        shareDict[subject] = likedSubjectCountB[subject] / biggest
     fkAverages = statistics.mean(readFk)
     rtAverages = statistics.median(readRt)
     allFk = []
@@ -104,6 +125,8 @@ def buildProfile(library, corpus):
     fkRange = fkHigh - fkLow
     rtRange = rtHigh - rtLow
 
+    # print(likedSubjectCount)
+    # print(likedSubjectCountB)
     profile = {
         "likedSubjects": likedSubjects,
         "subjectWeights": subjectWeightDict,
@@ -113,6 +136,7 @@ def buildProfile(library, corpus):
         "fkRange": fkRange,
         "rtRange": rtRange,
         "readIds": excludedBooks,
+        "share": shareDict,
     }
     return profile
 
@@ -135,7 +159,7 @@ def scoreBook(book, profile):
     subjectsUnion = profile["likedSubjects"] | candidateSubjects
     sharedTotal = 0
     for subject in sharedSubjects:
-        sharedTotal += profile["subjectWeights"][subject]
+        sharedTotal += profile["subjectWeights"][subject] * profile["share"][subject]
     unionTotal = 0
     for subject in subjectsUnion:
         unionTotal += profile["subjectWeights"][subject]

@@ -6,7 +6,7 @@ from reccomender import MIN_RATING, buildProfile, recommend
 
 corpusLocation = "./data/corpus.json"
 libraryLocation = "./data/demo_books.json"
-benchLocation = "./data/benchmark_readers.json"
+benchLocation = "./data/benchmark_mixed_ratings.json"
 with open(corpusLocation, "r") as c:
     corpus = json.load(c)
 
@@ -24,7 +24,7 @@ def leaveOneOut(library, corpus):
     for book in library["books"]:
         if book["Rating"] is None:
             continue
-        if book["Rating"] < MIN_RATING:
+        if book["Rating"] < 10:
             continue
         leftOut = book["gutenberg_id"]
         smaller = {
@@ -41,21 +41,27 @@ def leaveOneOut(library, corpus):
     return ranks
 
 
-for weight in candidateWeights:
-    reccomender.W_SHELF = weight
-    allRanks = []
-    for reader in bench:
-        allRanks.extend(leaveOneOut(reader["library"], corpus))
-    mean = statistics.mean(allRanks)
-    median = statistics.median(allRanks)
-    tenOrLower = 0
-    twentyfiveOrLower = 0
-    for rank in allRanks:
-        if rank <= 10:
-            tenOrLower += 1
-        if rank <= 25:
-            twentyfiveOrLower += 1
-    print(reccomender.W_SHELF, mean, median, tenOrLower, twentyfiveOrLower)
-reccomender.W_SHELF = 0.5
+allRanks = []
+rankPerReader = {}
+for reader in bench:
+    result = leaveOneOut(reader["library"], corpus)
+    allRanks.extend(result)
+    rankPerReader[reader["name"]] = result
+for reader, result in rankPerReader.items():
+    print(reader, statistics.mean(result), result)
+mean = statistics.mean(allRanks)
+median = statistics.median(allRanks)
+tenOrLower = 0
+twentyfiveOrLower = 0
+overHundred = 0
+for rank in allRanks:
+    if rank <= 10:
+        tenOrLower += 1
+    if rank <= 25:
+        twentyfiveOrLower += 1
+    if rank >= 100:
+        overHundred += 1
+print(mean, median, tenOrLower, twentyfiveOrLower, overHundred, sorted(allRanks)[-15:])
+
 
 # Demo Library result is [75, 22, 8, 2, 201] 61.6
