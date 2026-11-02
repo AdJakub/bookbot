@@ -150,5 +150,46 @@ with detTab:
         options=corpus["books"],
         format_func=lambda book: f"{book['Title']} - {book['Author']}",
     )
-    if st.button("View details"):
-        on_click = st.write(selectedBook)
+    st.header(selectedBook["Title"])
+    st.caption(selectedBook["Author"], selectedBook["gutenberg_id"])
+
+    st.link_button(
+        "View on Project Gutenberg",
+        f"https://www.gutenberg.org/ebooks/{selectedBook['gutenberg_id']}",
+    )
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("Words", selectedBook["word_count"])
+    with col2:
+        st.metric("Reading time in hours", selectedBook["Reading time"])
+
+    with col3:
+        st.metric("FK grade", round(selectedBook["Flesch-Kincaid"], 1))
+    subjectCol, shelfCol = st.columns(2)
+    subjects = selectedBook.get("subjects", [])
+    bookshelves = selectedBook.get("bookshelves", [])
+    with subjectCol:
+        if subjects:
+            st.pills(
+                "Subjects",
+                options=subjects,
+                selection_mode="multi",
+                default=subjects,
+                disabled=True,
+                wrap=True,
+            )
+        else:
+            st.caption("No subject data available :(")
+
+    with shelfCol:
+        if bookshelves:
+            st.pills(
+                "Bookshelves",
+                options=bookshelves,
+                selection_mode="multi",
+                default=bookshelves,
+                disabled=True,
+                wrap=True,
+            )
+        else:
+            st.caption("No bookshelf data available :(")
