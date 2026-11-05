@@ -12,7 +12,7 @@ python3 main.py in directory, with arguments analyze <project_gutenberg txt file
 
 ### To use in web (recommended)
 
-Visit https://bookbot-jwywe39kc5jktzmczxzv6u.streamlit.app/ . Self hosted support planned.
+Visit https://shelfwise.adjakub.hackclub.app/ . Self hosted support planned. Demo mode has a pre-filled library, google oauth is supported to keep your own books
 
 ## How the reccomendation engine works
 
